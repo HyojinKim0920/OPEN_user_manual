@@ -1,1 +1,10 @@
-site_name: My Docs
+site_name: Optimal Pathway to Energy Transition for Net-zero energy system
+
+theme:
+  name: rtd-dropdown
+
+nav:
+  # - Welcome OPEN!: 1_index.md
+  - OPEN Concept and Approach: 2_OPEN_concept.md
+  - Getting Started: 3_Get_started.md
+  - User Guide: 4_user_guide.md
