@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  <link rel="shortcut icon" href="../img/favicon.ico">
+  <title>User Guide - Optimal Pathway to Energy Transition for Net-zero energy system</title>
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+  <link href='https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "User Guide";
+    var mkdocs_page_input_path = "4_user_guide.md";
+    var mkdocs_page_url = null;
+  </script>
+  
+  <script src="../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href=".." class="icon icon-home"> Optimal Pathway to Energy Transition for Net-zero energy system</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+	<ul class="tocbase current">
+    
+    
+      
+
+
+  <li class="navtree toctree-l1 inactive">
+    <a class="" href="../2_OPEN_concept/">OPEN Concept and Approach</a>
+  </li>
+    
+      
+
+
+  <li class="navtree toctree-l1 inactive">
+    <a class="" href="../3_Get_started/">Getting Started</a>
+  </li>
+    
+      
+
+
+  
+    
+    <li class="navtree toctree-l1 page current">
+      <a class="current" href="./">
+        User Guide
+      </a>
+    </li>
+    
+      
+
+
+
+  <li class="toctree-l1 current">
+    <ul class="subnav-l1 current">
+    
+      
+        <li class="toctree-l2">
+          <a class="toctree-l3" href="#what-is-scenario">What is Scenario</a>
+        </li>
+    
+      
+        <li class="toctree-l2">
+          <a class="toctree-l3" href="#open-inputs">OPEN Inputs</a>
+        </li>
+    
+      
+        <li class="toctree-l2">
+          <a class="toctree-l3" href="#how-to-execute-open">How to execute OPEN</a>
+        </li>
+    
+    </ul>
+  </li>
+
+
+  
+    
+  </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="..">Optimal Pathway to Energy Transition for Net-zero energy system</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="..">Docs</a> &raquo;</li>
+    
+      
+    
+    <li>User Guide</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="user-guide">User Guide</h1>
+<h3 id="what-is-scenario">What is Scenario</h3>
+<ul>
+<li>시나리오는 현실 세계에게서 존재하거나 발생할 수 있는 특정 조건이나 상황을 모사하여 모델을 실행하는 하나의 설정을 의미한다. 사용자는 여러 시나리오를 통해 다양한 환경 변화나 정책 조건, 시스템의 구성 요인의 변화에 따른 영향을 분석할 수 있다. OPEN은 다중 시나리오 분석을 유연하게 지원하기 위해, 시나리오별 데이터 의존성에 따라 입력 데이터를 구조적으로 분리하여 관리하고 있다. 예를 들어, 시나리오에 영향을 미치지 않는 데이터는 <code>System Data</code> 폴더에, 시나리오별로 값이 달라지는 입력 데이터는 <code>resources/scenarios</code> 폴더에 각각 저장된다. 이러한 구조는 사용자로 하여금 여러 시나리오를 보다 명확하고 효율적으로 관리할 수 있도록 지원한다.</li>
+<li>OPEN은 다양한 제약조건과 기능 모듈들을 제공하고 있으며, 사용자는 목적에 맞게 이들을 선택적으로 활성화하거나 비활성화할 수 있다. 예를 들어, 단기 운영만 분석하고자 하는 경우에는 장기 설비계획 모듈을 제외하고 실행할 수 있으며, 온실가스 배출량과 같은 정책 제약을 고려하지 않도록 설정할 수도 있다. 반대로, 특정 정책 효과를 평가하기 위해 새로운 제약조건(예: 최소 설비 건설량)을 사용자 정의로 추가할 수도 있습니다.</li>
+<li>OPEN은 사용자가 원하는 분석 목적에 따라 시나리오를 유연하게 구성하고 실행할 수 있도록 설계되어 있으며, 시나리오 정의에 필요한 설정 방법과 입력 파일의 구조에 대해서는 다음 절에서 자세히 설명한다.</li>
+</ul>
+<h3 id="open-inputs">OPEN Inputs</h3>
+<ul>
+<li>OPEN의 모든 입력 파일들은 CSV(Comma-Separated Values) 파일로 구성하고 있으며, 이는 사용자 친화적이고 다양한 툴에서 쉽게 편집할 수 있는 장점이 있다. 입력 파일은 크게 공통 데이터와 시나리오별 데이터로 구분되며, 폴더 경로에 따라 별도로 관리된다. 사용자의 이해를 돕기 위해 이 문서에서는 예시로 'PowerGrid' 라는 대상 시스템 내에서 다중 시나리오 중 하나인 ‘sub_scenario_1’를 가정한다.<ul>
+<li>공통 데이터는 시나리오에 따라 변하지 않는 입력 파일들을 의미하며, 예를 들어 노드 정보, 송전선로 구성, 설비의 기본 특성 파라미터 등이 포함된다. PowerGrid에 대한 해당 파일들은 <code>System Data</code> 폴더 내에 위치한다.</li>
+<li>시나리오별 데이터는 시나리오마다 다르게 설정되는 데이터로, 연도별 전력수요, 설비 건설계획, 정책 옵션 등 이 여기에 해당된다. 이러한 파일들은 <code>PowerGird/resources/scenario/sub_scenario_1</code>에서 관리되며, 다른 다중 시나리오들은 <code>scenario</code>의 하위 경로에 시나라오 폴더를 추가하면 된다.</li>
+<li>OPEN은 시나리오에 영향을 주지 않는 입력 파일들은 <code>System Data</code> 폴더에서, 시나리오에 영향을 주는 파일들은 <code>resources/cenarios</code> 폴더에서 관리하고 있다. 아래 그림은 모델의 입력데이터에 대한 폴더의 구조를 보여주고 있으며, 사용자는 폴더와 데이터 구조, 파일명, 데이터 형식은 준수해야 한다.</li>
+</ul>
+</li>
+<li>사용자는 반드시 정해진 폴더 구조, 파일 이름, 데이터 형식을 준수해야 하며, OPEN은 이 구조를 기반으로 시뮬레이션 실행 시 자동으로 관련 데이터를 불러온다. 만약 구조가 임의로 변경되거나 형식에 맞지 않을 경우, 모델 실행 중 오류가 발생할 수 있으므로 주의가 필요하다. 단, 대상 시스템과 시나리오 이름은 변경할 수 있기 때문에, 해당 폴더명도 변경할 수 있다.</li>
+</ul>
+<pre>
+examples/
+└── PowerGrid/
+    ├── System Data/
+    │   ├── buses.csv
+    │   ├── carriers.csv
+    │   ├── generators-month-agc_max_pu.csv
+    │   ├── generators-month-agc_min_pu.csv
+    │   ├── generators-month-gf_max_pu.csv
+    │   ├── generators-month-gf_min_pu.csv
+    │   ├── generators-month-p_max_pu.csv
+    │   ├── generators-month-p_min_pu.csv
+    │   ├── generators-month-sfc.csv
+    │   ├── generators.csv
+    │   ├── lines.csv
+    │   ├── links.csv
+    │   ├── loads.csv
+    │   └── storages.csv
+    └── resources/
+        ├── scenario_information.yaml
+        └── scenarios/
+            └── sub_scenario_1/
+                ├── buses-year-lump_downward_reserve.csv
+                ├── buses-year-lump_reserve.csv
+                ├── carriers-year-capital_cost.csv
+                ├── carriers-year-fom.csv
+                ├── carriers-year-fuel_cost.csv
+                ├── carriers-year-max_built.csv
+                ├── carriers-year-max_capacity_2.csv
+                ├── carriers-year-max_emission.csv
+                ├── carriers-year-min_capacity.csv
+                ├── carriers.csv
+                ├── generators-hour-factor.csv
+                ├── generators.csv
+                ├── lines.csv
+                ├── links.csv
+                ├── loads-snapshots-p_set.csv
+                └── storages.csv
+</pre>
+
+<ul>
+<li>시나리오에 따라 영향을 받지 않는 데이터는 <code>System Data</code> 폴더에서 관리하고, 주로 설비의 특성과 지역 구분에 대한 내용을 다루고 있다. 입력 파일들의 구체적인 설명과 데이터 형식은 <code>open\component_attrs</code> 폴더에서 다루고 있다.</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>파일명</th>
+<th>설명</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>generators</code></td>
+<td>원자력, 석탄, LNG, LNG-CHP, 수력, IGCC, 바이오 등의 발전기의 운영특성 파라미터</td>
+</tr>
+<tr>
+<td><code>storages</code></td>
+<td>양수 발전기, 배터리 등의 저장장치 운영 특성 파라미터</td>
+</tr>
+<tr>
+<td><code>lines</code></td>
+<td>교류 송전선로의 파라미터</td>
+</tr>
+<tr>
+<td><code>links</code></td>
+<td>Power flow에 영향받지 않은 에너지 전달 매개체 (HVDC, 1차 에너지 등)</td>
+</tr>
+<tr>
+<td><code>carriers</code></td>
+<td>연료원별 공통된 이용률, 비용 특성, 배출계수, 수명, 최소운영기간 등 입력</td>
+</tr>
+<tr>
+<td><code>buses</code></td>
+<td>Bus별 전압, 전압 범위, 경도, 위도, Zone 구분</td>
+</tr>
+<tr>
+<td><code>loads</code></td>
+<td>국내 도 단위 지역으로 전력수요 구분</td>
+</tr>
+<tr>
+<td><code>generators-month-p_max_pu</code></td>
+<td>발전기(generators)의 월별 최대 출력값 (p.u.)</td>
+</tr>
+<tr>
+<td><code>generators-month-p_min_pu</code></td>
+<td>발전기(generators)의 월별 최소 출력값 (p.u.)</td>
+</tr>
+<tr>
+<td><code>generators-month-sfc</code></td>
+<td>발전기(generators)의 기동 단위 열량 (GCal)</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>시나리오에 따라 변경할 수 있는 데이터와 옵션 설정에 대한 파일들은 <code>resources/scenarios</code> 폴더에서 관리하고, <code>scenarios</code>에서 다중 시나리오에 따른 여러 하위 폴더들을 생성할 수 있다(e.g. sub_scenario_1, sub_scenario_2).</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>파일명</th>
+<th>설명</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>generators</code></td>
+<td>후보 발전기의 이름, 연료원, 입력 파라미터 정보 입력</td>
+</tr>
+<tr>
+<td><code>storages</code></td>
+<td>후보 양수 발전기, 저장장치의 입력 파라미터 정보 입력</td>
+</tr>
+<tr>
+<td><code>lines</code></td>
+<td>건설 예정인 송전선로에 대한 정보 입력</td>
+</tr>
+<tr>
+<td><code>links</code></td>
+<td>건설예정인 HVDC 선로 정보 입력</td>
+</tr>
+<tr>
+<td><code>carriers</code></td>
+<td>사용자가 설정한 제약조건 이름 입력</td>
+</tr>
+<tr>
+<td><code>generators-hour-factor</code></td>
+<td>재생에너지의 지역별 시간대별 발전 패턴 정보 입력 (%)</td>
+</tr>
+<tr>
+<td><code>loads-snapshots-p_set</code></td>
+<td>지역별 시간대별 전력수요에 대한 정보 입력 (MWh)</td>
+</tr>
+<tr>
+<td><code>buses-year-lump_reserve</code></td>
+<td>연도별 전국 상향예비력 요구량 (MWh)</td>
+</tr>
+<tr>
+<td><code>carriers-year-min_capacity</code></td>
+<td>연도별 연료원별 최소 누적 설비용량 (MW)</td>
+</tr>
+<tr>
+<td><code>carriers-year-min_capacity_2</code></td>
+<td>연도별 연료원별 최소 누적 설비용량 (MW)</td>
+</tr>
+<tr>
+<td><code>carriers-year-max_capacity</code></td>
+<td>연도별 연료원별 최대 누적 설비용량 (MW)</td>
+</tr>
+<tr>
+<td><code>carriers-year-max_capacity_2</code></td>
+<td>연도별 연료원별 최대 누적 설비용량 (MW)</td>
+</tr>
+<tr>
+<td><code>buses-year-lump_downward_reserve</code></td>
+<td>연도별 육지와 제주의 하향예비력 요구량 (MWh)</td>
+</tr>
+<tr>
+<td><code>carriers-year-capital_cost</code></td>
+<td>연료원별 연도별 설비 투자 가격 (원/MW)</td>
+</tr>
+<tr>
+<td><code>carriers-year-fom</code></td>
+<td>연료원별 연도별 고정 운영 가격 (원/MW)</td>
+</tr>
+<tr>
+<td><code>carriers-year-fuel_cost</code></td>
+<td>연료원별 연도별 연료 가격 (원/Gcal)</td>
+</tr>
+<tr>
+<td><code>carriers-year-max_emission</code></td>
+<td>연도별 배출량 (tCO2eq)</td>
+</tr>
+<tr>
+<td><code>clustered_generators-snapshots-factor_kmeans_min_err_from_mean_xxxx_yyyy_z_Cw</code></td>
+<td>(사용자의 시나리오 설정에 따라 자동 생성) 축약된 지역별 재생에너지 이용률 프로파일<br>(<code>xxxx</code>: 계획 시작년도, <code>yyyy</code>: 계획 종료년도, <code>z</code>: 년 당 대표일 수, <code>w</code>: 연속일 수)</td>
+</tr>
+<tr>
+<td><code>snapshots_weightings_xxxx_yyyy_z_z’_5_C1</code></td>
+<td>(사용자의 시나리오 설정에 따라 자동 생성) 축약된 재생에너지 이용률 프로파일<br>(<code>xxxx</code>: 계획 시작년도, <code>yyyy</code>: 계획 종료년도, <code>z</code>: 년 당 대표일 수, <code>z’</code>: 군집 중 상위 z’%, <code>w</code>: 연속일 수)</td>
+</tr>
+</tbody>
+</table>
+<h3 id="how-to-execute-open">How to execute OPEN</h3>
+<ul>
+<li>OPEN은 코드 편집기(PyCharm, VSCode 등) 또는 PowerShell을 이용해 실행할 수 있으며, 시뮬레이션 진행 상황에 대한 이메일 알림 기능을 설정할 수 있다. 두 실행 방식 모두 실행에 앞서 입력 데이터 및 시나리오 설정 파일이 준비되어 있어야 한다.</li>
+<li>코드 편집기를 사용하는 경우에는 다음과 같이 OPEN의 함수를 호출하여 실행할 수 있다. (VScode를 사용하는 경우 코드 내에 지정된 시나리오 이름과 경로 설정이 사용자의 환경에 맞게 수정되어야 함)</li>
+</ul>
+<pre><code class="language-python">import os
+from open import Network
+from open._helpers import call_config
+
+if __name__ == '__main__':
+    yaml_file_name = (
+        &quot;resources/&quot;
+        &quot;sub_scenario_1.yaml&quot;
+    )
+
+    config = call_config(
+        yaml_file_name
+    )
+
+    kwargs = {}
+
+    n = Network()
+    n = n.module.run_GTEP(
+        config = config,
+        **kwargs
+    )
+</code></pre>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+      
+        <a href="../3_Get_started/" class="btn btn-neutral" title="Getting Started"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+        <span><a href="../3_Get_started/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+    </span>
+</div>
+    <script>var base_url = '..';</script>
+    <script src="../js/theme.js" defer></script>
+      <script src="../search/main.js" defer></script>
+
+</body>
+</html>
