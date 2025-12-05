@@ -4,7 +4,8 @@ theme:
   name: rtd-dropdown
 
 nav:
-  - Welcome OPEN!: 1_Welcome_OPEN.md
-  - OPEN Concept and Approach: 2_OPEN_concept.md
-  - Getting Started: 3_Get_started.md
-  - User Guide: 4_user_guide.md
+  - Welcome OPEN! : 1_Welcome_OPEN.md
+  - OPEN Concept : 2_OPEN_concept.md
+  - Getting Started : 3_Get_started.md
+  - User Guide : 4_user_guide.md
+  - User Tutorial : 5_User_Tutorial.md
