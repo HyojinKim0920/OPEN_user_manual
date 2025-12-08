@@ -1,0 +1,7 @@
+/* ----- 코드 블록 줄바꿈 강제 허용 ----- */
+/* ```python ... ``` 같은 블록 코드에 적용 */
+.md-typeset pre,
+.md-typeset pre code,
+.highlight pre {
+    white-space: pre !important;  /* 줄바꿈 그대로 살리기 */
+}
