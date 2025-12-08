@@ -5591,27 +5591,27 @@ A와 B에서 입력했던 정보들을 연결시켜 제약조건을 활성화해
 
 
 ```python
-import os
-from open import Network
-from open._helpers import call_config
+  import os
+  from open import Network
+  from open._helpers import call_config
 
-if __name__ == '__main__':
-    yaml_file_name = (
-        "resources/"
-        "sub_scenario_1.yaml"
-    )
+  if __name__ == '__main__':
+      yaml_file_name = (
+          "resources/"
+          "sub_scenario_1.yaml"
+      )
 
-    config = call_config(
-        yaml_file_name
-    )
+      config = call_config(
+          yaml_file_name
+      )
 
-    kwargs = {}
+      kwargs = {}
 
-    n = Network()
-    n = n.module.run_GTEP(
-        config=config,
-        **kwargs
-    )
+      n = Network()
+      n = n.module.run_GTEP(
+          config=config,
+          **kwargs
+      )
 ```
 
 ## OPEN Outputs
