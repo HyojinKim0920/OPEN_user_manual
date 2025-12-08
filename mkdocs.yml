@@ -2,6 +2,8 @@ site_name: Optimal Pathway to Energy Transition for Net-zero energy system
 
 theme:
   name: rtd-dropdown
+  extra_css:
+    - stylesheets/extra.css
 
 nav:
   - Welcome OPEN! : 1_Welcome_OPEN.md
