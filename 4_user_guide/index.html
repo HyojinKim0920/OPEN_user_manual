@@ -5911,27 +5911,27 @@ table.dataframe {
 </li>
 <li>코드 편집기를 사용하는 경우에는 다음과 같이 OPEN의 함수를 호출하여 실행할 수 있다. (VScode를 사용하는 경우 코드 내에 지정된 시나리오 이름과 경로 설정이 사용자의 환경에 맞게 수정되어야 함)</li>
 </ul>
-<pre><code class="language-python">import os
-from open import Network
-from open._helpers import call_config
+<pre><code class="language-python">  import os
+  from open import Network
+  from open._helpers import call_config
 
-if __name__ == '__main__':
-    yaml_file_name = (
-        &quot;resources/&quot;
-        &quot;sub_scenario_1.yaml&quot;
-    )
+  if __name__ == '__main__':
+      yaml_file_name = (
+          &quot;resources/&quot;
+          &quot;sub_scenario_1.yaml&quot;
+      )
 
-    config = call_config(
-        yaml_file_name
-    )
+      config = call_config(
+          yaml_file_name
+      )
 
-    kwargs = {}
+      kwargs = {}
 
-    n = Network()
-    n = n.module.run_GTEP(
-        config=config,
-        **kwargs
-    )
+      n = Network()
+      n = n.module.run_GTEP(
+          config=config,
+          **kwargs
+      )
 </code></pre>
 <h2 id="open-outputs">OPEN Outputs</h2>
 <ul>
