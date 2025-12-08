@@ -119,13 +119,83 @@
         </li>
     
       
-        <li class="toctree-l2">
-          <a class="toctree-l3" href="#how-to-set-scenario">How to set scenario</a>
+          
+
+  <li class="toctree-l2">
+    <a href="#how-to-set-scenario">
+      How to set scenario
+      <span class="toctree-expand"></span>
+    </a>
+  </li>
+
+
+
+  <li class="toctree-l2">
+    <ul class="subnav-l2 toc-hidden">
+    
+      
+        <li class="toctree-l3">
+          <a class="toctree-l4" href="#_1">전력수요 시나리오</a>
         </li>
+    
+      
+        <li class="toctree-l3">
+          <a class="toctree-l4" href="#_2">가격 시나리오</a>
+        </li>
+    
+      
+        <li class="toctree-l3">
+          <a class="toctree-l4" href="#_3">후보 설비 시나리오</a>
+        </li>
+    
+      
+        <li class="toctree-l3">
+          <a class="toctree-l4" href="#_4">연료전환 시나리오</a>
+        </li>
+    
+      
+        <li class="toctree-l3">
+          <a class="toctree-l4" href="#_5">제약조건 설정 컨셉</a>
+        </li>
+    
+      
+        <li class="toctree-l3">
+          <a class="toctree-l4" href="#_6">예비력 제약조건</a>
+        </li>
+    
+      
+        <li class="toctree-l3">
+          <a class="toctree-l4" href="#_7">건설 제약조건 –건설설비 수</a>
+        </li>
+    
+      
+        <li class="toctree-l3">
+          <a class="toctree-l4" href="#-">건설 제약조건 - 설치용량</a>
+        </li>
+    
+      
+        <li class="toctree-l3">
+          <a class="toctree-l4" href="#_8">온실가스 배출량 제약조건</a>
+        </li>
+    
+      
+        <li class="toctree-l3">
+          <a class="toctree-l4" href="#tip">(Tip!) 계획기간 내 시점별 제약조건의 목표값 입력 방법</a>
+        </li>
+    
+    </ul>
+  </li>
+
+      
     
       
         <li class="toctree-l2">
           <a class="toctree-l3" href="#how-to-execute-open">How to execute OPEN</a>
+        </li>
+    
+      
+        <li class="toctree-l2">
+          <a class="toctree-l3" href="#open-outputs">OPEN Outputs</a>
         </li>
     
     </ul>
@@ -201,7 +271,7 @@ examples/
     │   ├── generators-month-p_max_pu.csv
     │   ├── generators-month-p_min_pu.csv
     │   ├── generators-month-sfc.csv
-    │   ├── generators.csv
+    │   ├── `generators.csv`
     │   ├── lines.csv
     │   ├── links.csv
     │   ├── loads.csv
@@ -385,7 +455,7 @@ examples/
 <li>OPEN은 다양한 구성 요소(<code>component</code>)를 활용하여 전력 시스템을 표현하고 있다. 모든 구성 요소(e.g., bus, 발전기, 저장장치, 선로, 부하)는 network 객체(<code>n</code>)에 저장되며, 사용자는 해당 데이터를 조회, 수정, 시각화 할 수 있다. <code>component</code>는 정적인 특성을 가진 데이터와 시계열 특성을 가진 데이터로 구분된다. OPEN의 각 <code>component</code>에 대한 메타 데이터(속성명, 설명, 타입 등)는 아래의 표에 정리되어 있다. 또한 사용자는 <code>n.components</code> 딕셔너리를 통해 확인할 수 있으며, 예시로 bus의 모든 속성에 대해 확인하려면 <code>n.components["Bus"]["attrs"]</code>로 볼 수 있다.</li>
 </ul>
 <blockquote>
-<p><strong>:loudspeaker: 주의사항</strong>
+<p><strong>📢 주의사항</strong>
 <small>
 - <code>{}</code>안에 해당 <code>component</code>나 <code>list_name</code>을 대입하면 됨
 </small></p>
@@ -3325,7 +3395,7 @@ examples/
 <li>
 <p>시나리오에 대한 정보로는 대표적으로 계획기간, 입력파일의 경로(고정 입력데이터, 시나리오 입력 데이터), 솔버 옵션, 시나리오의 제약조건 및 후보설비 정보, 연료전환 계획 등을 포함하고 있다. OPEN은 다양한 시나리오의 정보를 yaml 형식으로 하나의 파일을 통해 관리할 수 있도록 지원한다. yaml 형식의 파일은 들여쓰기와 key-value 쌍으로 이루어져 있는데, 사용자는 이를 통해 단순성과 가독성을 높여 손 쉽게 시나리오를 설정할 수 있다. 시나리오 정보에 대한 파일은 PowerGrid/resources 경로에 위치하며, 설명을 위해 시나리오 정보를 담은 예제 파일을 config_test.yaml로 정의한다.</p>
 <blockquote>
-<p><strong>:loudspeaker: 주의사항</strong>
+<p><strong>📢 주의사항</strong>
 <small>
 - 시나리오 정보 파일의 경로는 고정이며, 파일명은 사용자가 정의할 수 있다.
 - 아래 내용부터는 시나리오 정보 파일에서 시나리오 정보에 따른 key-value를 설명한다. OPEN 실행을 위해 key에 따른 value가 적절한 형식으로 반드시 작성되어야 한다. 그러나 (optional)이라고 적혀 있는 key는 사용자 편의를 위해 추가적으로 제공하는 기능이기 때문에 해당 기능이 필요할 때만 value를 입력하면 된다.
@@ -3461,7 +3531,7 @@ examples/
 <ul>
 <li>
 <p>사용자가 강제적으로 지정하고자 하는 특정 설비에 대한 연료전환 계획 정보는 <code>{conversion:scheduled}</code>에 입력해야 한다. 지정하고하는 설비를 key로, 해당 설비의 연료전환 정보는 해당 key의 하위에 key-value로 입력해야 한다. Key를 입력할 때 <code>generators.csv</code>의 <code>name</code>과 반드시 일치해야 한다. 사용자가 입력해야 하는 연료전환 경로 정보는 아래 표와 같다.
-    &gt; <strong>:loudspeaker: 주의사항</strong>
+    &gt; <strong>📢 주의사항</strong>
     &gt; <small>
     &gt; - 연료원을 <code>carrier</code>에 작성할 때, 정의한 naming rule을 반드시 지켜야 한다.
     &gt; </small></p>
@@ -3629,40 +3699,2390 @@ examples/
 <p>시나리오 우당탕탕 써야함!!!!!!!!!!!!!!!!!</p>
 <ul>
 <li>최적화 문제에서 제약조건(Constraint)은 결정변수(Decision variable)들이 반드시 만족해야 하는 조건을 의미하며, 등식 또는 부등식으로 나타낼 수 있다. 현실의 물리적, 기술적, 정책적, 자원적 한계 등을 제약조건으로 모델링함으로써 최적화 문제의 현실성을 높일 수 있다. OPEN Inputs에서 설명했듯이, OPEN은 사용자가 장기 전원계획 문제에서 사용자가 다양한 제약조건 옵션을 선택하여 문제에 반영할 수 있도록 지원한다. 또한, 사용자는 OPEN이 제공하고 있는 옵션 이외의 제약들을 반영하고 싶다면 모델을 확장하여 충분히 반영할 수 있다. 사용자는 입력 데이터와 시나리오 파일을 추가하거나 수정하여 다양한 제약조건을 설정할 수 있다. 이 장에서는 OPEN이 제공하고 있는 여러 시나리오와 제약조건 옵션을 소개하며, 이를 모델에 옵션을 반영하는 방법을 다룬다.</li>
+<li>OPEN에서 제공하는 주요 시나리오 옵션</li>
+<li>전력수요 시나리오</li>
+<li>가격 시나리오</li>
+<li>후보설비 시나리오</li>
+<li>
+<p>연료전환 시나리오</p>
+</li>
+<li>
+<p>OPEN에서 제공하는 주요 제약조건 옵션</p>
+</li>
+<li>예비력 제약조건</li>
+<li>건설 제약 제약조건</li>
+<li>온실가스 제약조건</li>
+<li>최소 기동∙정지시간</li>
+</ul>
+<h3 id="_1">전력수요 시나리오</h3>
+<ul>
+<li>전력시스템의 장기전원계획에서 가장 중요한 목표는 최소 비용으로 미래 전력수요를 충족시킬 수 있는 설비 투자계획과 운영계획을 수립하는 것이다. 특히, 이 계획에서 수급균형은 매우 중요한 조건으로, 전력수요는 의사결정의 핵심 지표가 된다. OPEN은 다양한 전력수요 시나리오별로 전원계획 수립을 지원하여, 사용자가 유연한 계획을 수립할 수 있도록 돕는다.</li>
+<li><em>(시나리오에 따른 수요 데이터 입력)</em> 각 하위 폴더(<code>resources/scenarios</code>) 내  <code>loads-snapshots-p_set.csv</code>파일에 시나리오에 맞게 수요 데이터를 입력한다. 해당 파일의 행은 계획기간 내 날짜, 컬럼은 각 bus를 의미한다. 사용자는 계획기간 전체에 대해 모든 시간대별, 버스별 수요를 입력해야 한다.</li>
 </ul>
 <blockquote>
-<p><strong>:loudspeaker: 주의사항</strong>
+<p><strong>📢 주의사항</strong>
 <small>
-- 방법에 대한 순서는 상관없음 (좀 다듬어져야 함! to-do)
+- <code>loads-snapshots-p_set.csv</code>의 bus명은 <code>PowerGrid/System Data/buses.csv</code>의 bus명(컬럼명: <code>name</code>)와 정확히 일치해야 한다. 불일치 시, OPEN은 해당 bus의 수요 데이터를 인식하지 못해 오류가 발생한다.
 </small></p>
 </blockquote>
-<h2 id="how-to-execute-open">How to execute OPEN</h2>
+<div style="overflow-x: auto; text-align: center;">
+
+  <style>
+  table.dataframe {
+      margin-left: auto;
+      margin-right: auto;
+  }
+
+  .dataframe thead th,
+  .dataframe th,
+  .dataframe td {
+      text-align: center !important;
+  }
+  </style>
+
+  <table border="1" class="dataframe dataframe">
+    <thead>
+      <tr style="text-align: right;">
+        <th></th>
+        <th>서울경기</th>
+        <th>인천</th>
+        <th>충북</th>
+        <th>대전세종충남</th>
+        <th>대구경북</th>
+        <th>강원</th>
+        <th>전북</th>
+        <th>광주전남</th>
+        <th>경남</th>
+        <th>부산울산</th>
+        <th>제주</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <th>2024-01-01 0:00</th>
+        <td>19912</td>
+        <td>4551</td>
+        <td>2844</td>
+        <td>6826</td>
+        <td>5689</td>
+        <td>1707</td>
+        <td>569</td>
+        <td>3414</td>
+        <td>3982</td>
+        <td>7396</td>
+        <td>723</td>
+      </tr>
+      <tr>
+        <th>2024-01-01 1:00</th>
+        <td>19099</td>
+        <td>4365</td>
+        <td>2728</td>
+        <td>6548</td>
+        <td>5457</td>
+        <td>1637</td>
+        <td>546</td>
+        <td>3274</td>
+        <td>3820</td>
+        <td>7093</td>
+        <td>687</td>
+      </tr>
+      <tr>
+        <th>2024-01-01 2:00</th>
+        <td>18701</td>
+        <td>4275</td>
+        <td>2672</td>
+        <td>6412</td>
+        <td>5344</td>
+        <td>1602</td>
+        <td>534</td>
+        <td>3206</td>
+        <td>3740</td>
+        <td>6947</td>
+        <td>652</td>
+      </tr>
+      <tr>
+        <th>2024-01-01 3:00</th>
+        <td>18502</td>
+        <td>4229</td>
+        <td>2643</td>
+        <td>6343</td>
+        <td>5286</td>
+        <td>1586</td>
+        <td>529</td>
+        <td>3172</td>
+        <td>3701</td>
+        <td>6872</td>
+        <td>636</td>
+      </tr>
+      <tr>
+        <th>2024-01-01 4:00</th>
+        <td>18484</td>
+        <td>4225</td>
+        <td>2640</td>
+        <td>6337</td>
+        <td>5281</td>
+        <td>1585</td>
+        <td>528</td>
+        <td>3169</td>
+        <td>3696</td>
+        <td>6865</td>
+        <td>639</td>
+      </tr>
+      <tr>
+        <th>2024-01-01 5:00</th>
+        <td>18531</td>
+        <td>4235</td>
+        <td>2648</td>
+        <td>6353</td>
+        <td>5295</td>
+        <td>1588</td>
+        <td>530</td>
+        <td>3177</td>
+        <td>3706</td>
+        <td>6883</td>
+        <td>654</td>
+      </tr>
+      <tr>
+        <th>2024-01-01 6:00</th>
+        <td>18699</td>
+        <td>4274</td>
+        <td>2672</td>
+        <td>6411</td>
+        <td>5343</td>
+        <td>1602</td>
+        <td>534</td>
+        <td>3206</td>
+        <td>3739</td>
+        <td>6946</td>
+        <td>681</td>
+      </tr>
+      <tr>
+        <th>2024-01-01 7:00</th>
+        <td>18561</td>
+        <td>4243</td>
+        <td>2651</td>
+        <td>6363</td>
+        <td>5304</td>
+        <td>1590</td>
+        <td>530</td>
+        <td>3183</td>
+        <td>3712</td>
+        <td>6894</td>
+        <td>685</td>
+      </tr>
+      <tr>
+        <th>2024-01-01 8:00</th>
+        <td>18353</td>
+        <td>4196</td>
+        <td>2622</td>
+        <td>6292</td>
+        <td>5243</td>
+        <td>1573</td>
+        <td>525</td>
+        <td>3147</td>
+        <td>3671</td>
+        <td>6817</td>
+        <td>674</td>
+      </tr>
+      <tr>
+        <th>2024-01-01 9:00</th>
+        <td>18252</td>
+        <td>4172</td>
+        <td>2607</td>
+        <td>6258</td>
+        <td>5215</td>
+        <td>1565</td>
+        <td>521</td>
+        <td>3129</td>
+        <td>3650</td>
+        <td>6779</td>
+        <td>627</td>
+      </tr>
+      <tr>
+        <th>2024-01-01 10:00</th>
+        <td>18476</td>
+        <td>4222</td>
+        <td>2639</td>
+        <td>6335</td>
+        <td>5279</td>
+        <td>1584</td>
+        <td>528</td>
+        <td>3167</td>
+        <td>3695</td>
+        <td>6862</td>
+        <td>620</td>
+      </tr>
+    </tbody>
+  </table>
+
+  </div>
+
+<h3 id="_2">가격 시나리오</h3>
 <ul>
-<li>OPEN은 코드 편집기(PyCharm, VSCode 등) 또는 PowerShell을 이용해 실행할 수 있으며, 시뮬레이션 진행 상황에 대한 이메일 알림 기능을 설정할 수 있다. 두 실행 방식 모두 실행에 앞서 입력 데이터 및 시나리오 설정 파일이 준비되어 있어야 한다.</li>
+<li>OPEN의 목적함수는 총 비용을 최소화하는 것으로, 총 비용에는 크게 건설비, 운영비, 연료비가 포함된다. 이 비용 항목들은 설비의 투자계획과 건설시점을 직접적으로 결정하는 중요한 요소이다. 장기 전원계획 수립에 있어 가격 파라미터는 시장, 기술, 정책 등의 변화에 따라 영향을 크게 변동될 수 있다. 특히, 연료가격은 전원계획에서 큰 비중을 차지하는데, 한국처럼 연료 의존도가 큰 경우 연료가격은 전원계획 수립에 있어 매우 중요한 파라미터가 된다. OPEN은 연도별 가격 전망에 따라 다양한 가격 시나리오를 구성∙분석할 수 있도록 지원하여, 정책 변화나 시장 불확실성에 대응할 수 있는 전원계획 수립을 가능하게 한다.
+    &gt; <strong>📢 주의사항</strong><br />
+    &gt; <small>
+    &gt; 각 파일에서 컬럼에 대상 시나리오에 따라 발전설비의 연료원과 저장장치의 설비명을 입력(Key naming rule of OPEN준수)해야 한다
+    &gt; </small><ul>
+<li><em>(시나리오에 영향을 받지 않는 가격 입력)</em> 사용자는 계획기간 동안 단일 가격 파라미터를 사용하려면 PowerGrid/System Data/carriers.csv를 이용해야 한다. 이 파일에서 name은 발전기와 저장장치의 carrier를 의미하며, 컬럼은 가격 항목을 의미한다. 연도별로 다른 가격 파라미터를 입력할 경우, 해당 설비의 가격 항목에 대한 컬럼은 비워두고 아래 방법을 따라야 한다.</li>
+</ul>
+</li>
+</ul>
+<div style="overflow-x: auto; text-align: center;">
+
+<style>
+/* 표(table) 자체를 가운데 정렬 */
+table.dataframe {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* 헤더/셀 내용을 가운데 정렬 */
+.dataframe thead th,
+.dataframe th,
+.dataframe td {
+    text-align: center !important;
+}
+</style>
+
+<table border="1" class="dataframe dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>capital_cost</th>
+      <th>fom</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>hydro</th>
+      <td>1173381000</td>
+      <td>19499000</td>
+    </tr>
+    <tr>
+      <th>bioheavyoil</th>
+      <td>1173381000</td>
+      <td>33263000</td>
+    </tr>
+    <tr>
+      <th>bioenergy</th>
+      <td>1173381000</td>
+      <td>33263000</td>
+    </tr>
+    <tr>
+      <th>oil</th>
+      <td>1605800000</td>
+      <td>68820000</td>
+    </tr>
+    <tr>
+      <th>coal</th>
+      <td>1605800000</td>
+      <td>14911000</td>
+    </tr>
+    <tr>
+      <th>LNG</th>
+      <td>1268582000</td>
+      <td>11470000</td>
+    </tr>
+    <tr>
+      <th>LNG-chp</th>
+      <td>1268582000</td>
+      <td>11470000</td>
+    </tr>
+    <tr>
+      <th>igcc</th>
+      <td>1268582000</td>
+      <td>45880000</td>
+    </tr>
+    <tr>
+      <th>nuclear</th>
+      <td>3151956000</td>
+      <td>24087000</td>
+    </tr>
+    <tr>
+      <th>nuclear-smr</th>
+      <td>655769633</td>
+      <td>32788482</td>
+    </tr>
+  </tbody>
+</table>
+
+</div>
+
+<pre><code>* *(시나리오에 영향을 받는 가격 입력)* 사용자의 시나리오에서 가격 항목이 연도에 따라 달라질 경우, 각 하위 폴더 내에서 사용자는 변경하고자 하는 가격 파라미터에 해당하는 파일을 수정하여 입력하면 된다. 건설가격은 carriers-year-capital_cost.csv, 운영가격은 carriers-year-fom.csv, 연료가격은 carriers-year-fuel_cost.csv파일이다. 각 파일에서 인덱스는 연도를 의미하고, 컬럼은 설비의 carrier를 의미한다. 인덱스에 연도를 입력할 때 사용자는 시나리오의 계획기간에 해당하는 모든 연도에 대해 작성해야 한다(아래 그림 참고).
+</code></pre>
+<div style="overflow-x: auto; text-align: center;">
+
+  <style>
+  table.dataframe {
+      margin-left: auto;
+      margin-right: auto;
+  }
+
+  .dataframe thead th,
+  .dataframe th,
+  .dataframe td {
+      text-align: center !important;
+  }
+  </style>
+
+  <table border="1" class="dataframe dataframe">
+    <thead>
+      <tr style="text-align: right;">
+        <th>name</th>
+        <th>nuclear</th>
+        <th>nuclear-smr</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <th>2024</th>
+        <td>2644</td>
+        <td>2644</td>
+      </tr>
+      <tr>
+        <th>2025</th>
+        <td>2714</td>
+        <td>2714</td>
+      </tr>
+      <tr>
+        <th>2026</th>
+        <td>2784</td>
+        <td>2784</td>
+      </tr>
+      <tr>
+        <th>2027</th>
+        <td>2854</td>
+        <td>2854</td>
+      </tr>
+      <tr>
+        <th>2028</th>
+        <td>2925</td>
+        <td>2925</td>
+      </tr>
+      <tr>
+        <th>2029</th>
+        <td>2995</td>
+        <td>2995</td>
+      </tr>
+      <tr>
+        <th>2030</th>
+        <td>3065</td>
+        <td>3065</td>
+      </tr>
+    </tbody>
+  </table>
+
+  </div>
+
+<h3 id="_3">후보 설비 시나리오</h3>
+<ul>
+<li>OPEN에서 말하는 후보설비는 전력수요를 안정적으로 공급하기 위해 추가적인 설비 투자가 필요한 상황에서, 추가 건설을 고려하고자 하는 설비를 의미한다. 사용자는 OPEN에서 새로운 특성 파라미터를 가진 설비를 후보 설비로 둘 수 있지만, 기존 전력시스템에 존재하고 있는 설비(사용자가 <code>PowerGrid/System Data/</code>에 입력했던 설비 데이터)의 파라미터를 따르는 후보설비로 둘 수 있다. 이 때 OPEN은 사용자가 정의한 후보설비 목록 중에서 설비 건설을 결정하기 때문에 후보 설비 목록에 대해 설정하는 것은 매우 중요하다. 이와 관련된 방법들은 이어서 설명한다.</li>
+<li>
+<p><em>(후보설비 방법 A - 기존 설비의 파라미터를 준용하여 설비 파일에 후보설비를 입력)</em>
+고정 데이터 폴더 혹은 시나리오 폴더 경로에 위치한 generators.csv에 행을 추가하여 후보설비를 입력한다. 이 때, <code>PowerGrid/System Data/generators.csv</code>와 설비명이 겹치지 않도록 설비명(name)을 작성해야 한다. 기존 설비와 동일한 파라미터 값을 상속받기 위해 상속받고자 하는 <code>PowerGrid/System Data/generators.csv</code>의 설비명을 <code>PowerGrid/resources/scenarios/generators.csv</code>의 <code>parent_unit</code>에 작성해야 한다. 예를 들어, 기존에 <code>PowerGrid/System Data/generators.csv</code>에 입력했던 원자력 발전기의 파라미터(신고리#1)를 그대로 사용하되, 용량과 설비운영시작일만 다른 신규 후보 설비를 시나리오에 추가하고자 하는 경우 아래 그림처럼 <code>parent_unit</code>에 사용하고자 하는 파라미터에 해당하는 기존 설비명을 그대로 작성하면 된다(<code>start_date</code>, <code>bus</code> 등은 사용자가 시나리오 맞게 입력해야 함).
+<br />
+<div style="overflow-x: auto; text-align: center;">
+
+  <style>
+  table.dataframe {
+      margin-left: auto;
+      margin-right: auto;
+  }
+
+  .dataframe thead th,
+  .dataframe th,
+  .dataframe td {
+      text-align: center !important;
+  }
+  </style>
+
+  <table border="1" class="dataframe dataframe">
+    <thead>
+      <tr style="text-align: right;">
+        <th>name</th>
+        <th>bus</th>
+        <th>control</th>
+        <th>carrier</th>
+        <th>committable</th>
+        <th>sector</th>
+        <th>start_date</th>
+        <th>end_date</th>
+        <th>p_nom</th>
+        <th>nb_0</th>
+        <th>parent_unit</th>
+        <th>Const_ramping</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <th>신규 nuclear-smr #1</th>
+        <td>대구경북</td>
+        <td>NaN</td>
+        <td>nuclear</td>
+        <td>True</td>
+        <td>NaN</td>
+        <td>2034-09-01</td>
+        <td>2100-01-01</td>
+        <td>175</td>
+        <td>1</td>
+        <td>신고리#1</td>
+        <td>fixed</td>
+      </tr>
+    </tbody>
+  </table>
+
+  </div></p>
+</li>
+<li>
+<p><em>(후보설비 방법 B - 기존 설비의 파라미터를 준용하여 시나리오 정보 파일에 후보설비를 입력)</em>
+앞서 설명했던 방법A는 후보설비를 추가하기 위해 csv 파일에 각 행을 수작업으로 추가해야 했다. 예를 들어 모든 bus에 동일한 후보설비를 추가하려면 bus 수만큼 행을 복사해야 한다. 반면에 방법 B는 <code>config_test.yaml</code>을 이용하는데 여기서 설명하는 방식은 모든 bus에 후보설비를 일괄적으로 생성할 수 있다. 먼저, <code>config_test.yaml</code> 파일에서 <code>{electricity:extendable_carriers}</code> 아래에 추가하고자 하는 설비와 설비의 <code>carrier</code>에 대한 key-value 값을 입력한다(아래의 좌측 그림처럼 설비별 key는 다음과 같음: 발전기는 <code>Generator</code>, 저장장치는 <code>Storage</code>, HVDC는 <code>Link</code>, 송전선로는 <code>Line</code>). 다음으로 <code>{electricity}</code>에 후보 설비의 carrier에 대한 key값을 추가하고, 필요한 정보(<code>start_date</code>, <code>p_nom</code>, <code>parent_unit</code>, 제약조건 정보)에 대한 key, value 값을 입력해야 한다.</p>
+</li>
+</ul>
+<p><code>yaml
+  electricity:
+    extendable_carriers:
+      Generator: [LNG]
+      Storage: []
+      Store: []
+      Link: []
+      Line: []</code></p>
+<p><code>yaml
+  LNG:
+    start_date: 2025-01-01
+    committable: True
+    candidate: True
+    p_nom: 800
+    Const_max_built: user
+    max_built: 10
+    Const_max_emission: co2_eq
+    Const_ramping: fixed
+    Const_start_up: True
+    Const_shut_down: True
+    Const_reserve: True
+    Const_max_units: user
+    max_units: 10
+    parent_unit: 오성복합1CC
+    inertia_constant: 6.4</code></p>
+<pre><code>예를 들어 사용자가 전력계통의 bus를 서울, 부산 제주 총 3개로 정의했다고 가정한다. 위의 그림은 LNG에 대해 2025년 1월 이후부터 운영 가능하고, 800MW 규모로 오성복합1CC의 파라미터를 준용하는 후보설비 서울, 부산, 제주 bus에 정의한 것을 보여준다. 이 방식은 앞서 *방법 A*를 이용하여 아래 그림처럼 3개의 행을 추가하여 후보설비를 입력한 방법과 동일하다.
+
+&lt;div style="overflow-x: auto; text-align: center;"&gt;
+&lt;style&gt;
+table.dataframe {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.dataframe thead th,
+.dataframe th,
+.dataframe td {
+    text-align: center !important;
+}
+&lt;/style&gt;
+
+&lt;table border="1" class="dataframe dataframe"&gt;
+  &lt;thead&gt;
+    &lt;tr style="text-align: right;"&gt;
+      &lt;th&gt;name&lt;/th&gt;
+      &lt;th&gt;bus&lt;/th&gt;
+      &lt;th&gt;carrier&lt;/th&gt;
+      &lt;th&gt;committable&lt;/th&gt;
+      &lt;th&gt;candidate&lt;/th&gt;
+      &lt;th&gt;start_date&lt;/th&gt;
+      &lt;th&gt;p_nom&lt;/th&gt;
+      &lt;th&gt;parent_unit&lt;/th&gt;
+      &lt;th&gt;Const_ramping&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;th&gt;25년 이후 LNG_서울&lt;/th&gt;
+      &lt;td&gt;서울&lt;/td&gt;
+      &lt;td&gt;LNG&lt;/td&gt;
+      &lt;td&gt;True&lt;/td&gt;
+      &lt;td&gt;True&lt;/td&gt;
+      &lt;td&gt;2025-01-01&lt;/td&gt;
+      &lt;td&gt;800&lt;/td&gt;
+      &lt;td&gt;오성복합1cc&lt;/td&gt;
+      &lt;td&gt;fixed&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;25년 이후 LNG_부산&lt;/th&gt;
+      &lt;td&gt;부산&lt;/td&gt;
+      &lt;td&gt;LNG&lt;/td&gt;
+      &lt;td&gt;True&lt;/td&gt;
+      &lt;td&gt;True&lt;/td&gt;
+      &lt;td&gt;2025-01-01&lt;/td&gt;
+      &lt;td&gt;800&lt;/td&gt;
+      &lt;td&gt;오성복합1cc&lt;/td&gt;
+      &lt;td&gt;fixed&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;25년 이후 LNG_제주&lt;/th&gt;
+      &lt;td&gt;제주&lt;/td&gt;
+      &lt;td&gt;LNG&lt;/td&gt;
+      &lt;td&gt;True&lt;/td&gt;
+      &lt;td&gt;True&lt;/td&gt;
+      &lt;td&gt;2025-01-01&lt;/td&gt;
+      &lt;td&gt;800&lt;/td&gt;
+      &lt;td&gt;오성복합1cc&lt;/td&gt;
+      &lt;td&gt;fixed&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;/div&gt;
+</code></pre>
+<ul>
+<li><em>(후보설비 방법 C - 신규 설비의 파라미터를 이용하여 후보설비 입력)</em> <code>generators.csv</code>파일에 행을 추가하여 컬럼별로 신규 설비의 파라미터 항목을 채워주면 된다. 이 때, 기존에 작성했던 설비명과 겹치지 않도록 설비명(<code>name</code>)을 작성해야 한다. 컬럼에 신규 설비에 대한 파라미터가 항목이 필요한 경우 해당 파라미터의 컬럼을 추가하여 설비에 대한 파라미터를 입력하면 된다.</li>
+</ul>
+<blockquote>
+<p><strong>📢 주의사항</strong>
+<small>
+- <code>candidate</code>
+  - OPEN이 해당 후보설비의 투자를 내생적으로 결정하게 하려면 candidate=True로 입력해야 하며, 이는 모델이 설비 건설을 결정할 수도 결정하지 않을 수도 있다. 이 경우에 모델은 후보설비의 건설 시점을 결정할 때 입력한 시작일(<code>start_date</code>)부터 내생적으로 결정한다. 반면에, 사용자는 입력한 후보설비를 특정 시나리오에서 반드시 건설되게 하려면 <code>candidate</code>를 <code>False</code>로 채우거나 비워둬야 한다. 따라서 사용자가 입력한 해당 후보설비는 설비 운영 시작일(<code>start_date</code>)에 건설된다.
+- <code>parent_unit</code>
+  - <code>parent_unit</code>은 What is component of OPEN에서 설명했듯이 ‘발전기의 정보가 부족한 경우 기존의 발전기 특성을 가져올 때 해당 발전기 명’을 의미한다. OPEN에서는 입력하고자 하는 후보설비의 <code>parent_unit을</code> 빈 값으로 둬도 실행에 있어 오류가 발생하지 않는다. 왜냐하면 비워둘 경우 <code>parent_unit</code> 목록 중에서 carrier가 동일하고 해당 설비와 용량이 가장 비슷한 설비의 파라미터를 참조하여 비어 있는 파라미터를 채우기 때문이다. 이를 위해 <code>parent_unit</code>의 목록을 다양하게 생성하는 것이 중요하다. OPEN에서 요구하는 설비의 파라미터 항목을 모두 아는 경우, 해당 설비의 parent_unit에 name에 입력했던 값을 다시 채워 줌으로써 parent_unit 목록을 추가할 수 있다.
+- 파일 및 경로
+  - 후보설비의 설명을 위해 발전기 파일(<code>generators.csv</code>)을 기준으로 설명한 것으로 저장장치(<code>storages.csv</code>), 송전선로(<code>lines.csv</code>) 등도 후보설비를 설정하는 방법도 발전기를 기준으로 설명한 방식과 동일하다. 설비에 따라 필요한 파라미터는 해당 파일에서 컬럼이나 key값을 추가하면 되고, 필요한 컬럼은 <code>open\component_attrs</code> 혹은 What is component of OPEN에서 확인할 수 있다. 앞서 강조했듯이, 설비 파일은 공통 데이터 파일의 경로와 시나리오 폴더 경로에 모두 존재할 수 있으며, 사용자의 시나리오 상황에 맞게 두 경로 중에서 선택하여 설비 파일을 사용하면 된다. 다만, 각각의 시나리오 폴더의 파일에서 설비명은 중복에 문제가 없으나, 공통 데이터 폴더의 파일을 기준으로 시나리오 폴더 파일의 설비명(<code>name</code>)은 중복되면 오류가 발생한다.
+</small></p>
+</blockquote>
+<h3 id="_4">연료전환 시나리오</h3>
+<ul>
+<li>에너지전환은 화석연료를 친환경 에너지로의 전환을 의미하는 것으로, 넷제로의 중요성이 커짐에 따라 화석연료의 전환이 전력시스템에서 큰 이슈가 되고 있다. 이에 OPEN은 석탄을 연료로 사용하는 발전기의 연료전환 결정을 다루는 시나리오를 지원한다. OPEN은 연료전환을 국가계획 등으로 인해 반드시 특정 발전기가 특정시점에 연료전환을 해야 하는 연료전환 계획이 확정되어 있는 상황(A)뿐만 아니라, 내생적으로 최적 결정을 통해 연료전환 시점과 연료원을 결정하는 것(B) 모두를 지원한다. 추가적으로, 특정 시점에 특정 연료원으로 연료전환 하는 계획을 반영함과 동시에 연료전환 시점 전과 후 기간 사이의 연료전환을 결정하는 상황(C)에 대한 시나리오 지원한다. (C)를 예시로 들어 석탄 발전기 A가 2045년에 수소 혼소로 연료전환하는 계획이 있다고 가정한다. 이 예시에서는 2040년에 수소 혼소로 연료전환을 반드시 결정하면서, 2045년 전까지 암모니아 혼소 혹은 LNG로 연료전환을 하거나 2040년 이후에 수소로 연료전환하는 것을 모두 결정할 수 있음을 의미한다. 즉, 아래 그림에서 주황색 화살표가 나타내는 시점에 반드시 연료전환이 이루어지며, 연두색 화살표처럼 확정되지 않은 연료전환 경로와 시점은 OPEN이 내생적으로 결정하는 것을 의미한다. 구체적인 연료전환 시나리오 설정방법은 이어서 설명한다.</li>
+</ul>
+<p><img alt="연료전환예시" src="../img/4_fuel_conversion_example.png" /></p>
+<ul>
+<li>OPEN은 석탄과 LNG를 사용하는 발전기의 연료전환에 대한 결정을 모두 지원한다. 연료전환 결정은 설비의 폐지 비용과 전환 비용을 고려하여 최적의 연료전환 경로를 결정하게 된다. 아래 표는 석탄과 LNG 발전기가 연료전환을 할 수 있는 경로에 대한 예시를 나타내며, 기술이 퇴보하는 방향으로 상태 이동은 불가능하다(e.g., 수소전소에서 석탄으로 연료전환 하는 것은 불가).</li>
+</ul>
+<table style="width: 100%; table-layout: fixed; text-align: center;">
+  <col style="width: 200px;">
+  <col style="width: 300px;">
+  <col style="width: 350px;">
+
+  <thead>
+    <tr>
+      <th>연료전환 대상 설비</th>
+      <th>이동 가능한 상태</th>
+      <th>가능한 전환 연료</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <tr>
+      <td>석탄발전소</td>
+      <td>석탄, 석탄-암모니아 50% 혼소, LNG, 수소 전소</td>
+      <td>석탄 → 석탄-암모니아 혼소 → LNG → 수소 전소</td>
+    </tr>
+    <tr>
+      <td>LNG 복합발전소</td>
+      <td>LNG, LNG-수소 50% 혼소, 수소 전소</td>
+      <td>LNG → LNG-H₂ 혼소 → 수소 전소</td>
+    </tr>
+  </tbody>
+</table>
+
+<ul>
+<li><em>(A: 연료전환 확정 계획 반영 시나리오)</em> 먼저 특정시점에 반드시 연료전환이 되는 계획을 시나리오에 반영하는 방법에 대해 설명한다. 이 방법은 OPEN이 내생적으로 연료전환 경로를 결정하지 않고, 사용자의 연료전환 계획만을 반영한다. 연료전환이 확정되었다는 것은 연료전환이 이루어지기 전에 기존 연료원(<code>carrier</code>)을 사용하던 설비(이하, 폐지 확정 설비)의 운영 종료일(<code>end_date</code>)를 알고 있다는 것을 의미한다. 또한, 연료전환이 확정된 설비(이하, 연료전환 확정 신규 설비)의 새로운 연료원(<code>carrier</code>)과 운영 시작일(<code>start_date</code>)를 알고 있다는 것을 의미한다.</li>
+<li><em>(폐지 확정 설비의 업데이트)</em> 사용자가 사용했던 고정 데이터 폴더 혹은 시나리오 폴더 경로 중에 폐지 확정 설비가 있는 <code>generators.csv</code> 파일에서 해당 설비의 <code>end_date</code>에 연료전환 계획에 따른 운영 종료일을 입력한다.</li>
+<li><em>(연료전환 확정 신규설비 업데이트)</em> 사용자는 목적에 맞게 고정 데이터 폴더 혹은 시나리오 폴더 경로 중에 <code>generators.csv</code> 파일에 연료전환 확정 신규설비의 정보를 입력한다. 이 때, 연료전환 확정 신규설비의 운영 시작일, 연료전환 된 연료원, 용량, bus, 특성 파라미터(혹은 참고할만한 <code>parent_unit</code>) 등을 작성해야 한다.</li>
+<li>
+<p>*(주의사항) 연료전환을 중점적인 시나리오로 다루고자 하는 경우 연료전환 확정 신규설비를 업데이터 할 때 시나리오 폴더 경로에 위치한 <code>generators.csv</code> 파일을 이용하는 것을 권장한다.</p>
+<blockquote>
+<p><strong>📢 주의사항</strong>
+<small>
+- 연료전환을 중점적인 시나리오로 다루고자 하는 경우 연료전환 확정 신규설비를 업데이터 할 때 시나리오 폴더 경로에 위치한 <code>generators.csv</code> 파일을 이용하는 것을 권장한다.
+</small></p>
+</blockquote>
+</li>
+<li>
+<p><em>(B: OPEN의 내생적 연료전환 경로 결정 시나리오)</em> OPEN이 연료전환을 내생적으로 결정한다는 것은 비용 최소화 관점에서 최적화를 통해 최적의 연료전환 계획을 도출하는 것을 의미한다. OPEN이 내생적으로 연료전환을 결정하게 하려면 <code>config_test.yaml</code> 파일에서 <code>{conversion:consversion_carriers}</code>의 value에 연료전환을 고려하고자 하는 대상 <code>carrier</code>를 입력해야 한다. 다음으로 해당 파일에서 <code>{conversion:transferable_states}</code>에 연료원별로 모든 연료전환 경로를 정의해야 한다. 아래 그림은 석탄과 LNG를 연료전환 고려 대상 carrier로 정의하고 연료전환 경로를 입력한 예시를 보여준다.</p>
+</li>
+</ul>
+<p><code>yaml
+  conversion:
+    scheduled_conversion : False
+    conversion_carriers : [ coal, LNG ]
+    transferable_states :
+      coal : [ coal-ammonia 50, LNG, LNG-H2 50, H2 100 ]
+      coal-ammonia 50 : [ LNG, LNG-H2 50, H2 100 ]
+      LNG : [ LNG-H2 50, H2 100 ]
+      LNG-H2 50 : [ H2 100 ]</code></p>
+<ul>
+<li><em>(C: 연료전환 계획 반영 + 내생적 연료전환 계획 결정 시나리오)</em> 이 방법은 사용자의 연료전환 계획은 반드시 반영하되, 계획기간 동안 연료전환 계획에 따른 시점 사이에 OPEN이 최적 연료전환 경로를 도출한다. </li>
+<li>먼저 사용자의 연료전환 계획을 반영하기 위해 <code>config_test.yaml</code> 파일에서 <code>{conversion:scheduled_conversion}</code>를 <code>Tru</code>e로 입력해야 한다(<code>scheduled_conversion는</code> 계획된 연료전환의 반영 여부를 의미). </li>
+<li>다음으로 연료전환 계획에 대한 정보를 해당 파일의 <code>{conversion:scheduled}</code>에 key-value로 입력해야 한다. 연료전환 대상 설비의 설비명을 입력하고 해당 설비의 연료전환 정보를 key-value로 입력해야 하는데, 사용자는 반드시 아래 그림처럼 설비의 bus, 연료전환 연료원, 운영시작일, 용량을 입력해야 한다(기존 설비의 연료전환 계획이므로, <code>generators.csv</code>에서 작성했던 설비명(<code>name</code>)과 반드시 일치해야 함).
+    <code>yaml
+    석탄발전기 1호기:
+      bus: 충남
+      carrier: coal
+      start_date: 2028-01-01
+      p_nom: 1000</code></li>
+<li>이제 OPEN이 내생적으로 연료전환 경로를 결정하게 해야 한다. 이 과정은 앞서 설명한 <em>B: OPEN의 내생적 연료전환 계획 결정 시나리오</em>의 설정 방법과 동일하다.</li>
+<li>앞서 설명했듯이, OPEN은 연료전환 경로를 결정함에 있어, 신규 설비의 건설비용, 기존 설비의 폐지 비용 혹은 연료전환 비용을 모두 종합적으로 고려하여 비용 최소화를 목표로 한다. 따라서 연료전환에 있어서 전환 비용에 대한 데이터는 굉장히 중요하다. 전환 가격에 대한 정보는 <code>config_test.yaml</code> 파일에서 <code>{conversion:연료전환 전 carrier:연료전환 후 carrier}</code>에 대한 key-value값을 입력해야 한다. 이 때 사용자가 앞서 정의한 모든 연료전환 경로에 대해 연료전환에 대한 가격 정보를 입력해야 한다(연료전환 가격에 대한 key 값은 <code>capital_cost</code>). 아래 그림은 석탄(연료전환 전 carrier)에서 LNG(연료전환 후 carrier)로 전환했을 때 연료전환에 대한 설비 투자 가격에 대해 정보를 작성한 예시를 보여 준다. 사용자는 작성할 때 기존에 작성했던 모든 연료전환 경로에 대한 가격을 입력해야 한다.<blockquote>
+<p><strong>📢 주의사항</strong>
+<small>
+- 사용자는 기존에 정의했던 발전기의 carriers의 명명을 반드시 준수해야 한다. 이를 어길 경우 연료원을 인식하지 못해 OPEN내에서 오류가 발생한다.
+</small>
+    <code>yaml
+    coal:
+      LNG:
+        activate: True
+        start_year: 2025-01-01
+        lifetime: 30
+        min_operation_year: 1
+        parent_unit:
+        capital_cost: 1268582000</code></p>
+</blockquote>
+</li>
+</ul>
+<h3 id="_5">제약조건 설정 컨셉</h3>
+<ul>
+<li>전력수요, 가격에 대한 시나리오는 설정에 있어 입력 데이터 파일의 값을 바꾸면 손쉽게 설정이 가능하다. 반면에 후보설비 제약, 예비력 제약, 건설 제약, 온실가스 상한 제약을 다루는 경우 시나리오 내에서도 설비별로 적용하고자 하는 제약조건이 달라질 수 있다. 구체적으로 사용자는 전력계통의 특정 제약조건을 전체 bus에 위치한 특정 <code>carrier</code> 설비에 모두 반영할 수 있고(이하, 제약조건 일괄 반영), 일부 bus에 위치한 carrier설비에 대해서만 반영할 수 있다(이하, 제약조건 일부 반영). 예를 들어, 아래 그림처럼 전력계통 내의 모든 후보 풍력 발전기에 대해 최소 건설 용량에 대한 제약을 반영할 수 있다. 이 경우에는 해당 carrier의 모든 설비에 대해 최소 건설 용량 제약을 반영해야 한다.</li>
+</ul>
+<p><img alt="연료전환예시" src="../img/4_constraint_all.png" />
+  이와 다르게 아래 그림처럼 경북, 제주 bus에 위치한 설비별로 각각 최소 건설 용량에 대한 제약을 반영할 수 있다. 
+<img alt="연료전환예시" src="../img/4_constraint_partial.png" /></p>
+<ul>
+<li>제약조건을 생성하는 방법은 크게 아래와 같는 과정이 필요하며, 아래 과정의 순서는 중요하지 않다.</li>
+<li><em>(생성 방법 A. 설비의 제약조건 정보 입력)</em>
+주요 제약조건별 key-value값은 아래와 같으며, key 값은 사용자가 변경할 수 없고 value는 아래 표에서 정의한 규칙을 따라야 한다. OPEN에서 제약조건 설정 유무에 관계없이 모델 내에서 모든 제약식을 제공하고 있으나, 제약조건 설정 유무에 따라 해당 제약식을 활성화되는 경우 value의 자료형은 boolean으로 작성되어야 한다. 대표적으로는 예비력 제약조건이 여기에 해당한다. 한편, 제약조건을 특정 설비들에만 적용하는 경우가 있는데, 이 경우 OPEN은 특정 설비만을 대상으로 한 제약식을 생성한다. 이에 해당하면 value는 문자열(string)으로 입력해야 한다. 구체적으로 문자열로 입력해야 하는 경우 단일 설비에 적용한 제약조건의 목표값을 대표연도별로 일정하게 적용하고자 할 때 value는 user로, 이외의 경우에는 사용자가 직접 value를 정의(이하, 사용자 정의)해야 한다. 아래는 표는 주요 제약조건별 key 값과 value의 자료형을 보여준다.</li>
+</ul>
+<table style="width: 100%; table-layout: fixed; text-align: center;">
+  <col style="width: 220px;">
+  <col style="width: 350px;">
+  <col style="width: 250px;">
+
+  <thead>
+    <tr>
+      <th>제약 구분</th>
+      <th>key</th>
+      <th>value type (value)</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <tr>
+      <td>예비력 제약조건</td>
+      <td><code>Const_reserve</code></td>
+      <td>boolean (True/False)</td>
+    </tr>
+    <tr>
+      <td>건설 제약조건</td>
+      <td>
+        <code>Const_max_built</code>,  
+        <code>Const_min_built</code>,  
+        <code>Const_max_capacity</code>,  
+        <code>Const_min_capacity</code>
+      </td>
+      <td>string (user 또는 사용자 정의)</td>
+    </tr>
+    <tr>
+      <td>온실가스 배출량 제약조건</td>
+      <td><code>Const_max_emission</code></td>
+      <td>string (co2_eq)</td>
+    </tr>
+  </tbody>
+</table>
+
+<ul>
+<li><em>(생성 방법 B. 제약조건의 목표 값 입력)</em>
+사용자는 목표 값(상한 값 혹은 하한 값)을 설정할 때, 계획기간 동안 대표연도별로 동일한 값 혹은 다른 값을 입력할 수 있다. OPEN은 계획기간 동안 동일한 값을 입력하고자 할 때 일괄적으로 목표값을 입력할 수 있는 기능도 제공한다. 여기서 value에 string을 입력하는 제약조건의 경우 단일설비와 복수설비에 대해 사용하는 파일이 다르다. 아래 표는 계획기간 동안 동일한 목표값을 입력하고자 할 때 제약조건 value와 사용 파일을 보여준다. </li>
+</ul>
+<table style="width: 100%; table-layout: fixed; text-align: center;">
+    <col style="width: 200px;">
+    <col style="width: 260px;">
+    <col style="width: 260px;">
+    <col style="width: 260px;">
+    <thead>
+      <tr>
+        <th rowspan="2"></th>
+        <th colspan="2">단일설비</th>
+        <th rowspan="2">복수설비</th>
+      </tr>
+      <tr>
+        <th>설비 파일(.csv)</th>
+        <th>시나리오 파일(.yaml)</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>제약조건의 value</td>
+        <td>user</td>
+        <td>user</td>
+        <td>사용자 정의</td>
+      </tr>
+      <tr>
+        <td>목표값 입력파일</td>
+        <td>설비파일(.csv)의 컬럼에 목표값 입력</td>
+        <td>시나리오파일(.yaml)에<br>목표값에 대한 key-value 추가</td>
+        <td>carrier.csv의 컬럼에 목표값 입력</td>
+      </tr>
+    </tbody>
+  </table>
+
+<blockquote>
+<p><small> 목표값에서 key는 변경할 수 없으며(<code>open\component_attrs</code> 참고), value는 실수 혹은 정수가 입력되어야 함</p>
+</blockquote>
+<ul>
+<li>아래 표는 계획기간 동안 다른 목표값을 입력하고자 할 때 제약조건 value와 사용 파일을 보여준다.</li>
+</ul>
+<table style="width: 100%; table-layout: fixed; text-align: center;">
+  <col style="width: 200px;">
+  <col style="width: 260px;">
+  <col style="width: 260px;">
+  <col style="width: 260px;">
+  <thead>
+    <tr>
+      <th rowspan="2"></th>
+      <th colspan="2">단일설비</th>
+      <th rowspan="2">복수설비</th>
+    </tr>
+    <tr>
+      <th>설비 파일(.csv)</th>
+      <th>시나리오 파일(.yaml)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>제약조건의 value</td>
+      <td colspan="3">사용자 정의</td>
+    </tr>
+    <tr>
+      <td>목표값 입력파일</td>
+      <td colspan="3"><code>carriers-year-xxxx.csv</code>에 컬럼 추가</td>
+    </tr>
+  </tbody>
+</table>
+
+<ul>
+<li><em>(생성 방법 C. 제약조건 활성화)</em>
+A와 B에서 입력했던 정보들을 연결시켜 제약조건을 활성화해야 OPEN에 제약조건이 반영된다.</li>
+</ul>
+<blockquote>
+<p><strong>:mag_right: 참고사항</strong>
+<small>
+- 설명을 위해 설비파일은 <code>generators.csv</code>을 기준으로 하며, 시나리오 파일은 <code>confing_test.yaml</code>을 기준으로 한다. 제약조건별 구체적인 설정방법은 이어서 설명하도록 한다.
+</small></p>
+</blockquote>
+<h3 id="_6">예비력 제약조건</h3>
+<ul>
+<li>전력계통에서 예비력은 전력수급의 균형을 유지하기 위해 전력수요를 초과하여 보유하는 공급 능력을 말한다. 전력계통 운영에 있어 갑작스러운 외부 사고와 수급 불균형이 발생할 수 있는데 이를 대응하기 위해 적정 수준의 예비력을 보유하고 있는 것이 매우 중요하다. OPEN은 예비력을 크게 설비예비력, 상향예비력, 하향예비력으로 구분하여 제약조건을 지원한다. 설비예비력은 연간 최대전력수요를 초과하여 보유할 수 있는 설비용량을 의미한다. 상향예비력과 하향예비력은 실시간으로 변화하는 전력수요에 대해 수급균형을 맞추기 위해 전력공급을 증가시키거나 감소시키는 예비력을 의미한다. 앞서 『제약조건 설정 컨셉』에서 설명했듯이, 예비력 제약조건의 key는 <code>Const_reserve</code>를, value는 boolean(<code>Ture</code>/<code>False</code>)으로 입력해야 한다.</li>
+<li><em>(생성 방법 A. 제약조건 정보 입력 – 설비 파일의 설비)</em>
+앞서 설명했듯이 발전기(<code>generators.csv</code>)에 대한 입력파일은 <code>PowerGrid/System Data</code> 혹은 PowerGrid/resources/scenarios 경로에 위치해 있다. 두 경로의 파일중에 예비력 제약조건을 반영하고자 하는 설비가 있는 파일의 컬럼에 제약조건에 대한 key 값(Const_reserve)을 컬럼으로 추가하여 입력한다. 다음으로 예비력 제약조건을 반영하고자 하는 설비 행의 Const_reserve 컬럼에 True를 채워주고, 예비력 제약조건을 반영하지 않는 설비는 Const_reserve 컬럼에 False를 채워준다.</li>
+<li><em>(생성 방법 A. 제약조건 정보 입력 – 시나리오 파일의 설비)</em>
+이 경우는 <em>후보설비 방법 B</em>를 통해 생성한 설비에 대해 예비력 제약조건을 반영하겠다는 것을 의미한다. 예비력 제약조건을 반영하고자 하는 설비(<code>carrier</code>)에 대해 <code>config_test.yaml</code> 파일에서 <code>{electricity:carrier}</code>에 key-value값으로 <code>{Const_reserve:True}</code>를 입력하면 된다(예비력 제약조건이기 때문에 <code>carrier</code>는 발전기 혹은 저장장치만을 대상으로 함). 예를 들어 4시간을 방전하는 <code>battery-4h</code> 후보설비에 대해 아래처럼 key-value를 추가()<code>{Const_reserve: True}</code>)하여 예비력 제약조건을 설정할 수 있다.</li>
+</ul>
+<p>```yaml
+    battery-4h:
+      start_date: 2025-01-01
+      candidate: True
+      p_nom: 100
+      sr: 0.33
+      gf_max_pu: 1.0
+      max_hours: 4
+      e_head_max_pu: 1.0
+      e_head_min_pu: 0.1
+      efficiency_store: 0.95
+      efficiency_dispatch: 0.95
+      standing_loss: 0.003
+      cyclic_state_of_charge: False
+      capacity_factor: 1.0
+      Const_max_built: user
+      max_built: 500
+      Const_max_units: user
+      max_units: 500
+      Const_reserve: True</p>
+<p>```</p>
+<blockquote>
+<p><strong>📢 주의사항</strong>
+<small>
+- <code>Const_reserve</code> 컬럼의 기본값은 <code>False</code>이기 때문에 예비력 제약조건을 반영하지 않는 경우 빈 값으로 둬도 OPEN은 <code>False</code>로 인식하여 예비력 제약을 반영하지 않는다. 예를 들어, 아래 표는 ‘A발전기 #1’은 예비력 제약조건을 반영하고 있지 않지만, ‘B발전기 #1’은 예비력 제약조건을 반영함을 보여주고 있다(<code>Const_reserve</code>컬럼).
+</small>
+    <div style="overflow-x: auto; text-align: center;"></p>
+</blockquote>
+<pre><code>&lt;style&gt;
+table.dataframe {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.dataframe thead th,
+.dataframe th,
+.dataframe td {
+    text-align: center !important;
+}
+&lt;/style&gt;
+
+&lt;table border="1" class="dataframe dataframe"&gt;
+  &lt;thead&gt;
+    &lt;tr style="text-align: right;"&gt;
+      &lt;th&gt;name&lt;/th&gt;
+      &lt;th&gt;bus&lt;/th&gt;
+      &lt;th&gt;carrier&lt;/th&gt;
+      &lt;th&gt;committable&lt;/th&gt;
+      &lt;th&gt;start_date&lt;/th&gt;
+      &lt;th&gt;end_date&lt;/th&gt;
+      &lt;th&gt;Const_reserve&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;th&gt;A발전기 #1&lt;/th&gt;
+      &lt;td&gt;서울&lt;/td&gt;
+      &lt;td&gt;solar&lt;/td&gt;
+      &lt;td&gt;True&lt;/td&gt;
+      &lt;td&gt;2034-09-01&lt;/td&gt;
+      &lt;td&gt;2100-01-01&lt;/td&gt;
+      &lt;td&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;th&gt;B발전기 #1&lt;/th&gt;
+      &lt;td&gt;인천&lt;/td&gt;
+      &lt;td&gt;LNG&lt;/td&gt;
+      &lt;td&gt;True&lt;/td&gt;
+      &lt;td&gt;2034-09-01&lt;/td&gt;
+      &lt;td&gt;2100-01-01&lt;/td&gt;
+      &lt;td&gt;True&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;/div&gt;
+</code></pre>
+<ul>
+<li><em>(생성 방법 B - 설비예비력 요구량 입력 방법)</em> OPEN은 설비예비력 요구량 입력을 크게 연도별 요구량으로 입력하는 방식과 최대전력수요의 비율 값을 입력하는 방식으로 지원한다. 먼저, 연도별 요구량을 입력하려면 <code>config_test.yaml</code>에서 <code>{planning:options:capacity_reserve}</code>에 해당 연도별 설비예비력 요구량(단위: MW)에 대한 key-value를 입력한다. 
+  <code>yaml
+    capacity_reserve:
+      2025: 125050
+      2030: 135908
+      2035: 150182
+      2040: 184403
+      2045: 251046
+      2050: 317689</code>
+  최대전력수요의 비율을 입력하는 방식을 사용하려면 연도별 요구량 방식을 입력하는데 사용했던 key-value를 삭제하고, <code>{planning:options:installed_reseve}</code>의 value를 0보다 큰 값으로 입력한다.</li>
+</ul>
+<p><code>yaml
+    installed_reserv_rate: 0.22</code></p>
+<p>•   <em>(생성 방법 C - 상향/하향 예비력 요구량 입력 방법)</em> 상향예비력 요구량은 <code>PowerGrid/resources/scenarios/buses-year-lump_reserve.csv</code>을 이용한다. 이 파일에서 <code>name</code>은 연도를, 각 컬럼은 bus를 의미하며 사용자는 해당 연도별 지역별 상향 예비력 요구량에 대한 값을 채우면 된다. 하향예비력은 <code>PowerGrid/resources/scenarios/buses-year-lump_downward_reserve.csv</code>을 이용하며, 상향예비력 요구량처럼 파일을 구조와 요구량 입력 방법은 동일하다.</p>
+<blockquote>
+<p><strong>📢 주의사항</strong>
+<small> OPEN은 예비력 요구량에 따른 설비예비력 결정을 zone단위로 수행한다. 따라서<code>PowerGrid/System Data/buses.csv</code>에서 두 bus(‘강원’과 ‘경남’)의 zone이 동일한 경우, 예비력 요구량이 ‘강원’만 값이 채워져 있더라도 ‘강원’과 ‘경남’에 해당하는 zone의 요구량으로 입력된다.</p>
+</blockquote>
+<div style="overflow-x: auto; text-align: center;">
+
+  <style>
+  table.dataframe {
+      margin-left: auto;
+      margin-right: auto;
+  }
+
+  .dataframe thead th,
+  .dataframe th,
+  .dataframe td {
+      text-align: center !important;
+  }
+  </style>
+
+  <table border="1" class="dataframe dataframe">
+    <thead>
+      <tr style="text-align: right;">
+        <th>name</th>
+        <th>강원</th>
+        <th>경남</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <th>2024</th>
+        <td>6500</td>
+        <td>0</td>
+      </tr>
+      <tr>
+        <th>2025</th>
+        <td>6612</td>
+        <td>0</td>
+      </tr>
+      <tr>
+        <th>2026</th>
+        <td>6756</td>
+        <td>0</td>
+      </tr>
+      <tr>
+        <th>2027</th>
+        <td>6918</td>
+        <td>0</td>
+      </tr>
+      <tr>
+        <th>2028</th>
+        <td>7055</td>
+        <td>0</td>
+      </tr>
+      <tr>
+        <th>2029</th>
+        <td>7192</td>
+        <td>0</td>
+      </tr>
+      <tr>
+        <th>2030</th>
+        <td>7367</td>
+        <td>0</td>
+      </tr>
+    </tbody>
+  </table>
+
+  </div>
+
+<ul>
+<li><em>(생성 방법 C – 설비 예비력 제약조건 활성화)</em> 설비예비력에 대한 제약조건은 전원계획 수립에 있어 해당 설비예비력만큼의 여유용량을 고려해야 한다. 『생성 방법 B - 설비예비력 요구량 입력 방법』에서 값을 채워준 것만으로도 해당 제약조건이 활성화된다.</li>
+<li><em>(생성 방법 C – 상향/하향 예비력 제약조건 활성화)</em> 지금까지는 설비별로 제약조건 정보를 입력하고, 제약에 대한 목표값을 입력하는 과정까지 마쳤다. 이제 두 입력을 연결하여 제약조건을 활성화하는 과정이 필요하다. 앞서 설명했듯이, OPEN은 장기전원계획과 단기운영계획을 지원한다. 사용자는 <code>config_test.yaml</code>의 값을 수정하여 각 계획별로 예비력 제약조건을 활성화할 수 있다. 장기전원계획에서 예비력 제약조건을 활성화하려면 <code>{planning:options:reserve}</code>에 고려하고자 하는 상향/하향 예비력에 대한 속성값을 작성해야 한다(상향예비력: <code>lump_reserve</code>, 하향예비력: <code>lump_down_reserve</code>). 단기운영계획에서도 예비력을 고려하려면 앞서 설명한 방법과 동일하지만, <code>config_test.yaml</code>에서 <code>{operation:options:reserve}</code>에 고려하고자 하는 상향/하향 예비력에 대한 속성값을 작성해야 한다. 아래 그림처럼 작성할 경우 상향예비력과 하향예비력에 대한 제약조건을 모두 반영하는 것을 의미한다.</li>
+</ul>
+<p><code>yaml
+    reserve: [lump_reserve, lump_downward_reserve]</code></p>
+<blockquote>
+<p><strong>📢 주의사항</strong>
+<small> bus명은 <code>PowerGrid/System Data/buses.csv</code>의 bus명(컬럼명: <code>name</code>)와 정확히 일치해야 한다. 불일치 시, OPEN은 해당 bus의 예비력 요구량을 인식하지 못해 오류가 발생한다.</p>
+</blockquote>
+<h3 id="_7">건설 제약조건 –건설설비 수</h3>
+<ul>
+<li>장기전원계획에서 정책적 또는 환경적 요인으로 인해 미래 계획기간 동안 설비의 특정 대수만큼 반드시 설치해야 하거나, 특정 대수를 넘기지 않는 상황을 반영해야 하는 상황이 존재한다. 이를 반영하기 위해 OPEN은 건설설비 수에 대한 제약을 지원한다. 반복적인 설명을 피하기 위해 최대 건설 설비 수 제약조건을 기준으로 설명하며, 최소 건설 설비 수에 대한 제약조건은 최대 건설 설비 수에 대한 제약조건 설정방법과 동일하다. 최대와 최소 건설 설비 수 제약조건 설정에 있어 대칭되는 파일 혹은 key값은 아래와 같다.</li>
+</ul>
+<table style="width: 100%; table-layout: fixed; text-align: center;">
+    <col style="width: 50%;">
+    <col style="width: 50%;">
+
+    <thead>
+      <tr>
+        <th>최대 건설 설비 수 제약조건</th>
+        <th>최소 건설 설비 수 제약조건</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><code>carriers-year-max_built.csv</code></td>
+        <td><code>carriers-year-min_built.csv</code></td>
+      </tr>
+      <tr>
+        <td><code>Const_max_built</code></td>
+        <td><code>Const_min_built</code></td>
+      </tr>
+      <tr>
+        <td><code>max_built</code></td>
+        <td><code>min_built</code></td>
+      </tr>
+    </tbody>
+  </table>
+
+<ul>
+<li>OPEN은 건설 설비 수 제약조건에 대해 계획기간동안 시점별로 다른 목표값을 설정하게 할 수도 있고, 동일한 목표값을 설정하게 할 수 있다. 또한 모든 bus에 위치한 설비에 대해 건설 설비 수 제약조건을 일괄적으로 설정하게 할 수도 있고, 동시에 특정 bus에 위치한 설비에 대해서만 건설 설비 수 제약조건을 적용하게 할 수 있다. 이와 관련된 방법은 이어서 순차적으로 설명하도록 한다. 설명을 위해 사용자는 수소 전소 발전 설비에 대해 최대 건설 설비 수에 대한 제약조건을 설정하고, ‘사용자 정의’를 통한 value 값은 ‘max_capacity_H2 100’ 혹은 ‘max_capacity_H2 100_강원’으로 가정하였다.</li>
+</ul>
+<p><span style="font-size: 0.75rem; font-weight: 700;">[계획기간 내 시점별로 동일한 목표값 &amp; 단일설비]</span></p>
+<blockquote>
+<p>계획기간 동안 시점별로 제약조건의 목표값을 동일하게 설정하는 방법을 다룬다. 여기서 설명하는 방법은 특정 <code>carrier</code>의 설비들 중에서 1기에 대해 제약조건을 설정하는 방식을 보여준다.</p>
+</blockquote>
+<ul>
+<li><em>(생성 방법 A – 설비파일에 제약조건 정보 입력)</em> <code>generators.csv</code>파일에서 제약조건을 추가하고자 하는 설비의 행에 Const_max_built 컬럼을 추가하고, 컬럼의 값으로 user를 입력한다. </li>
+</ul>
+<div style="overflow-x: auto; text-align: center;">
+  <style>
+  table.dataframe {
+      margin-left: auto;
+      margin-right: auto;
+  }
+
+  .dataframe thead th,
+  .dataframe th,
+  .dataframe td {
+      text-align: center !important;
+  }
+  </style>
+  <table border="1" class="dataframe dataframe">
+    <thead>
+      <tr style="text-align: right;">
+        <th>name</th>
+        <th>bus</th>
+        <th>carrier</th>
+        <th>committable</th>
+        <th>start_date</th>
+        <th>end_date</th>
+        <th>p_nom</th>
+        <th>nb_0</th>
+        <th>Const_max_built</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <th>신규수소전소 #1</th>
+        <td>경남</td>
+        <td>H2 100</td>
+        <td>True</td>
+        <td>2034-09-01</td>
+        <td>2100-01-01</td>
+        <td>500</td>
+        <td>1</td>
+        <td>user</td>
+      </tr>
+    </tbody>
+  </table>
+  </div>
+
+<ul>
+<li><em>(생성 방법 A – 시나리오 파일에 제약조건 정보 입력)</em> 이 방식은 주로 시나리오 파일을 통해 모든 bus에 생성한 <code>carrier</code> 설비에 대해 각각 제약조건을 입력하는 방식이다. <code>config_test.yaml</code> 파일에서 제약조건을 적용하고자 하는 <code>carrier</code>에 대한 설비에 key-value를 입력해야 한다. 해당 파일의 <code>{electricity:carrier}</code>에 key-value값으로 <code>{Const_max_built: user}</code>를 입력하면 된다(<code>carrier</code>는 발전기 혹은 저장장치의 <code>carrier</code>만 대상으로 함). 예를 들어, 아래 그림처럼 제약조건에 대한 key-value를 입력하면 사용자는 전체 bus에 위치한 모든 수소 전소 후보 설비에 대해 각각 bus별로 최대 건설 설비 수에 제약조건의 정보를 입력(<code>{Const_max_built: user}</code>)한 것을 의미한다.
+  <code>yaml
+    H2 100:
+      start_date: 2035-01-01
+      committable: True
+      Candidate: True
+      Const_max_built: user</code></li>
+<li>
+<p><em>(생성 방법 B – 설비 파일에 목표값 입력)</em> 설비파일의 특정 설비 1기에 대한 목표값을 입력하려면, 해당 파일에 컬럼을 추가하는 방식으로 목표값을 입력한다(정수형으로 입력해야 함). 이를 위해 <code>max_built</code>컬럼을 추가하고, 사용자는 해당 제약조건의 최대 설치 수를 설정하면 된다(컬럼의 순서는 중요하지 않음).
+<br />
+<div style="overflow-x: auto; text-align: center;">
+
+  <style>
+  table.dataframe {
+      margin-left: auto;
+      margin-right: auto;
+  }
+
+  .dataframe thead th,
+  .dataframe th,
+  .dataframe td {
+      text-align: center !important;
+  }
+  </style>
+
+  <table border="1" class="dataframe dataframe">
+    <thead>
+      <tr style="text-align: right;">
+        <th>name</th>
+        <th>bus</th>
+        <th>carrier</th>
+        <th>committable</th>
+        <th>start_date</th>
+        <th>end_date</th>
+        <th>p_nom</th>
+        <th>nb_0</th>
+        <th>Const_max_built</th>
+        <th>max_built</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <th>신규수소전소 #1</th>
+        <td>경남</td>
+        <td>H2 100</td>
+        <td>True</td>
+        <td>2034-09-01</td>
+        <td>2100-01-01</td>
+        <td>500</td>
+        <td>1</td>
+        <td>user</td>
+        <td>3</td>
+      </tr>
+    </tbody>
+  </table>
+
+  </div></p>
+</li>
+<li>
+<p><em>(생성 방법 B – 시나리오 파일에 목표값 입력)</em> 후보설비에 대해 최대 건설 설비 수 제약조건에 대한 목표값을 입력하려면 <code>config_test.yaml</code> 파일에서 <code>{electricity:carrier}</code>에 key-value값으로 <code>{max_built: 목표값}</code>를 입력하면 된다(정수형으로 입력해야 함). 아래 그림처럼 <code>max_built</code>에 <code>3</code>을 입력할 경우, 계획기간 동안 전체 bus에 위치한 각각의 수소 전소 설비에 대해 계획기간 내 시점별로 최대 건설 설비 수를 3대로 제한하는 것을 의미한다.</p>
+</li>
+</ul>
+<p><code>yaml
+    H2 100:
+      start_date: 2035-01-01
+      committable: True
+      Candidate: True
+      Const_max_built: user
+      max_built: user</code>
+* <em>(생성 방법 C – 설비파일에 설정한 제약조건 활성화)</em> <code>PowerGrid/resources/scenarios/carriers.csv</code> 파일에 활성화하고자 하는 제약조건에 대한 정보를 입력함으로써 해당 제약조건을 활성화할 수 있다. 이 파일에서 object는 제약조건의 key를, <code>name</code>은 사용자가 정의한 제약조건 명(value)을 입력하고, object는 제약조건의 key를 입력해야 한다.
+<br />
+<div style="overflow-x: auto; text-align: center;">
+
+  <style>
+  table.dataframe {
+      margin-left: auto;
+      margin-right: auto;
+  }
+
+  .dataframe thead th,
+  .dataframe th,
+  .dataframe td {
+      text-align: center !important;
+  }
+  </style>
+
+  <table border="1" class="dataframe dataframe">
+    <thead>
+      <tr style="text-align: right;">
+        <th>name</th>
+        <th>object</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <th>max_built_H2_100</th>
+        <td>Const_max_built</td>
+      </tr>
+    </tbody>
+  </table>
+
+  </div></p>
+<ul>
+<li><em>(생성 방법 C – 설비파일/시나리오 파일에서 설정한 제약조건 활성화)</em> 단일설비에 제약조건을 설정하는 방식은 설비 파일과 시나리오 파일 모두 별도의 활성화 과정 없이 A와 B과정을 거치면 제약조건이 활성화된다.</li>
+</ul>
+<p><span style="font-size: 0.75rem; font-weight: 700;">[계획기간 내 시점별로 동일한 목표값 &amp; 복수설비]</span></p>
+<blockquote>
+<p>계획기간 동안 시점별로 제약조건의 목표값을 동일하게 설정하는 방법을 다룬다. 구체적으로 여기서 설명하는 방법은 특정 carrier의 설비들 중에서 2기 이상에 대해 제약조건을 설정하는 방식을 보여준다.</p>
+</blockquote>
+<ul>
+<li>
+<p><em>(생성 방법 A – 설비 파일에 제약조건 정보 입력)</em> <code>generators.csv</code> 파일에 <code>Const_max_built</code> 컬럼을 추가한다. 다음으로 제약조건을 추가하고 하는 설비 행들에 사용자가 정의한 제약조건명(<code>max_built_H2 100_경남</code>)을 입력한다. 참고로 <em>계획기간 내 시점별로 동일한 목표값 &amp; 단수설비</em>와 다르게 value는 사용자가 직접 정의해야 한다.
+<br />
+<div style="overflow-x: auto; text-align: center;">
+
+  <style>
+  table.dataframe {
+      margin-left: auto;
+      margin-right: auto;
+  }
+
+  .dataframe thead th,
+  .dataframe th,
+  .dataframe td {
+      text-align: center !important;
+  }
+  </style>
+
+  <table border="1" class="dataframe dataframe">
+    <thead>
+      <tr style="text-align: right;">
+        <th>name</th>
+        <th>bus</th>
+        <th>carrier</th>
+        <th>committable</th>
+        <th>start_date</th>
+        <th>end_date</th>
+        <th>p_nom</th>
+        <th>nb_0</th>
+        <th>Const_max_built</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <th>신규수소전소 #1</th>
+        <td>경남</td>
+        <td>H2 100</td>
+        <td>True</td>
+        <td>2034-09-01</td>
+        <td>2100-01-01</td>
+        <td>500</td>
+        <td>1</td>
+        <td>max_built_H2_100</td>
+      </tr>
+      <tr>
+        <th>신규수소전소 #1</th>
+        <td>서울</td>
+        <td>H2 100</td>
+        <td>True</td>
+        <td>2034-09-01</td>
+        <td>2100-01-01</td>
+        <td>500</td>
+        <td>1</td>
+        <td>max_built_H2_100</td>
+      </tr>
+    </tbody>
+  </table>
+  </div></p>
+</li>
+<li>
+<p><em>(생성 방법 A – 시나리오파일에 제약조건 정보 입력)</em> 이 방식은 주로 시나리오 파일을 통해 모든 bus에 생성한 carrier 설비에 대해 각각 제약조건을 입력하는 방식이다. <code>config_test.yaml</code> 파일에서 제약조건을 적용하고자 하는 carrier에 대한 설비에 key-value를 입력해야 한다. 해당 파일의 <code>{electricity:carrier}</code>에 key-value값으로 <code>{Const_max_built: 사용자 정의}</code>를 입력하면 된다(carrier는 발전기 혹은 저장장치의 <code>carrier</code>만 대상으로 함). 예를 들어, 아래 그림처럼 제약조건에 대한 key-value를 입력하면 사용자는 시나리오 파일로 정의한 모든 bus의 수소 전소설비에 대해 각각 bus별로 최대 건설설비 수 제약조건에 대한 정보를 입력한 것을 의미한다.
+  <code>yaml
+    H2 100:
+      start_date: 2035-01-01
+      committable: True
+      Candidate: True
+      Const_max_built: max_built_H2_100</code></p>
+</li>
+<li><em>(생성 방법 B – 설비파일과 시나리오 파일의 제약조건 목표값 입력)</em> 계획기간 동안 복수설비에 대해 동일한 목표값을 입력하려면 <code>PowerGrid/resources/scenarios/carriers.csv</code> 파일에 값을 입력해야 한다. 이 부분은 사용자의 이해를 돕기 위해 제약조건 활성화 방법에서 이어서 설명하도록 한다.</li>
+<li><em>(생성 방법 C - 최대 건설 설비 수 제약조건 활성화)</em> <code>PowerGrid/resources/scenarios/carriers.csv</code> 파일에 활성화하고자 하는 제약조건에 대한 정보를 입력함으로써 해당 제약조건을 활성화할 수 있다. 여기서 <code>name</code>은 사용자가 정의한 제약조건 명(value)을 입력하고, <code>object</code>는 제약조건의 key를 입력해야 한다. </li>
+</ul>
+<div style="overflow-x: auto; text-align: center;">
+
+  <style>
+  table.dataframe {
+      margin-left: auto;
+      margin-right: auto;
+  }
+
+  .dataframe thead th,
+  .dataframe th,
+  .dataframe td {
+      text-align: center !important;
+  }
+  </style>
+
+  <table border="1" class="dataframe dataframe">
+    <thead>
+      <tr style="text-align: right;">
+        <th>name</th>
+        <th>object</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <th>max_built_H2_100</th>
+        <td>Const_max_built</td>
+      </tr>
+    </tbody>
+  </table>
+
+  </div>
+
+<p>여기서 제약조건의 목표값을 입력(생성 방법 B)하려면 해당 파일에서 <code>max_built</code> 컬럼을 추가하여 목표값을 입력해야 한다.</p>
+<div style="overflow-x: auto; text-align: center;">
+
+  <style>
+  table.dataframe {
+      margin-left: auto;
+      margin-right: auto;
+  }
+
+  .dataframe thead th,
+  .dataframe th,
+  .dataframe td {
+      text-align: center !important;
+  }
+  </style>
+
+  <table border="1" class="dataframe dataframe">
+    <thead>
+      <tr style="text-align: right;">
+        <th>name</th>
+        <th>object</th>
+        <th>max_built</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <th>max_built_H2_100_경남</th>
+        <td>Const_max_built</td>
+        <td>3</td>
+      </tr>
+    </tbody>
+  </table>
+
+  </div>
+
+<p><span style="font-size: 0.75rem; font-weight: 700;">[계획기간 내 시점별로 다른 목표값 &amp; 복수설비]</span></p>
+<blockquote>
+<p>계획기간 동안 시점별로 제약조건의 목표값을 다르게 설정하는 방법을 다룬다. 시점별로 설치 수의 목표값을 설정할 수 있기 때문에 사용자는 계획기간 동안 맞춤화 된 제약조건을 설정할 수 있다. 여기서 설명하는 방법은 특정 <code>carrier</code>의 설비들 중에서 1기 이상에 대해 제약조건을 설정하는 방식을 보여준다. 또한, 특정 제약조건에 대해 특정 <code>carrier</code>의 모든 설비를 대상으로 제약조건을 일괄적으로 설정할 수 있는 방법도 다룬다.</p>
+</blockquote>
+<ul>
+<li><em>(생성 방법 A – 설비 파일에 제약조건 정보 입력)</em> <code>generators.csv</code> 파일에 Const_max_built 컬럼을 추가하고, 제약조건을 추가하고자하는 설비 행들에 사용자가 정의한 제약조건명(<code>max_built_H2 100_경남</code>)을 입력한다.</li>
+</ul>
+<div style="overflow-x: auto; text-align: center;">
+  <style>
+  table.dataframe {
+      margin-left: auto;
+      margin-right: auto;
+  }
+
+  .dataframe thead th,
+  .dataframe th,
+  .dataframe td {
+      text-align: center !important;
+  }
+  </style>
+  <table border="1" class="dataframe dataframe">
+    <thead>
+      <tr style="text-align: right;">
+        <th>name</th>
+        <th>bus</th>
+        <th>carrier</th>
+        <th>committable</th>
+        <th>start_date</th>
+        <th>end_date</th>
+        <th>p_nom</th>
+        <th>nb_0</th>
+        <th>Const_max_built</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <th>신규수소전소 #1</th>
+        <td>경남</td>
+        <td>H2 100</td>
+        <td>True</td>
+        <td>2034-09-01</td>
+        <td>2100-01-01</td>
+        <td>500</td>
+        <td>1</td>
+        <td>user</td>
+      </tr>
+            <tr>
+        <th>신규수소전소 #2</th>
+        <td>서울</td>
+        <td>H2 100</td>
+        <td>True</td>
+        <td>2034-09-01</td>
+        <td>2100-01-01</td>
+        <td>500</td>
+        <td>1</td>
+        <td>user</td>
+      </tr>
+    </tbody>
+  </table>
+  </div>
+
+<ul>
+<li><em>(생성 방법 A – 시나리오파일에 제약조건 정보 입력)</em> 이 방식은 주로 시나리오 파일을 통해 모든 bus에 생성한 <code>carrier</code> 설비에 대해 각각 제약조건을 입력하는 방식이다. <code>config_test.yaml</code> 파일에서 제약조건을 적용하고자 하는 <code>carrier</code>에 대한 설비에 key-value를 입력해야 한다. 해당 파일의 <code>{electricity:carrier}</code>에 key-value값으로 <code>{Const_max_built: 사용자 정의}</code>를 입력하면 된다(<code>carrier</code>는 발전기 혹은 저장장치의 <code>carrier</code>만 대상으로 함). 예를 들어, 아래 그림처럼 제약조건에 대한 key-value를 입력하면 사용자는 시나리오 파일로 정의한 모든 bus의 수소 전소설비에 대해 각각 bus별로 최대 건설설비 수 제약조건에 대한 정보를 입력한 것을 의미한다.</li>
+</ul>
+<p><code>yaml
+    H2 100:
+      start_date: 2035-01-01
+      committable: True
+      Candidate: True
+      Const_max_built: max_built_H2_100</code></p>
+<ul>
+<li><em>(생성 방법 A – 특정 <code>carrier</code>에 대한 모든 설비(설비 파일, 시나리오 파일)에 대해 제약조건 정보 입력)</em> 기존에 작성한 특정 <code>carrier</code>의 모든 설비(기존/건설예정/후보 설비)에도 최대 설치용량 제약을 넣어주려면 <code>config_test.yaml</code> 파일에서 <code>{scenario:설비명}</code>에 제약조건에 대한 key를 입력한다. 다음으로 하위 key와 value를 해당 <code>carrier</code>와 사용자가 정의한 제약조건명을 입력해야 한다. 아래 그림처럼 입력하면 <code>generator.csv</code>와 <code>config_test.yaml</code>에 입력한 모든 수소 전소 발전설비에 해당 제약조건 정보가 입력된다(설비명은 설비에 대한 <code>component</code>를 의미).</li>
+</ul>
+<p><code>yaml
+      Generator:
+        Const_max_built:
+          H2 100: max_built_H2_100</code></p>
+<ul>
+<li><em>(생성 방법 B – 설비파일과 시나리오 파일의 제약조건 목표값 입력)</em> 설비 파일 혹은 시나리오 파일에 입력했던 제약조건의 목표값을 입력하려면 <code>PowerGrid/resources/scenarios/carriers-year-max_built.csv</code>를 이용해야 한다. 해당 파일에서 <code>name</code>은 시점을 의미하고, 컬럼은 제약조건명을 의미한다. 다른 최대 건설 설비 수에 대한 제약조건의 목표값을 입력하려면 해당 파일에서 컬럼을 추가하여 입력하면 된다. 아래 그림은 2025년, 2030년, 2035년에 각각 수소 전소설비를 최대 3, 2, 3호기를 건설하는 제약을 예시로 보여준다.</li>
+</ul>
+<div style="overflow-x: auto; text-align: center;">
+  <style>
+  table.dataframe {
+      margin-left: auto;
+      margin-right: auto;
+  }
+
+  .dataframe thead th,
+  .dataframe th,
+  .dataframe td {
+      text-align: center !important;
+  }
+  </style>
+  <table border="1" class="dataframe dataframe">
+    <thead>
+      <tr style="text-align: right;">
+        <th>name</th>
+        <th>max_built_H2 100</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <th>2025</th>
+        <td>3</td>
+      </tr>
+      <tr>
+        <th>2030</th>
+        <td>2</td>
+      </tr>
+      <tr>
+        <th>2035</th>
+        <td>3</td>
+      </tr>      
+    </tbody>
+  </table>
+  </div>
+
+<ul>
+<li><em>(생성 방법 C - 최대 건설 설비 수 제약조건 활성화)</em> 설비 파일과 시나리오 파일의 제약조건 모두 활성화 방법은 동일하다. <code>PowerGrid/resources/scenarios/carriers.csv</code> 파일에 활성화하고자 하는 제약조건에 대한 정보를 입력함으로써 해당 제약조건을 활성화할 수 있다. 여기서 <code>name</code>은 사용자가 정의한 제약조건 명(value)을 입력하고, object는 제약조건의 key를 입력해야 한다. 이 과정은 제약조건을 최적화 문제에 반영하기 위해 반드시 필요한 과정이다.</li>
+</ul>
+<div style="overflow-x: auto; text-align: center;">
+
+  <style>
+  table.dataframe {
+      margin-left: auto;
+      margin-right: auto;
+  }
+
+  .dataframe thead th,
+  .dataframe th,
+  .dataframe td {
+      text-align: center !important;
+  }
+  </style>
+
+  <table border="1" class="dataframe dataframe">
+    <thead>
+      <tr style="text-align: right;">
+        <th>name</th>
+        <th>object</th>
+
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <th>max_built_H2_100</th>
+        <td>Const_max_built</td>
+      </tr>
+    </tbody>
+  </table>
+
+  </div>
+
+<blockquote>
+<p><strong>📢 주의사항</strong>
+<small>
+지금까지 설명한 방식은 전체 계획기간을 나눠서 기간별로 건설 설비 수를 제약한 방식이었다. 이 방식은 국가계획이나 사용자의 시나리오 계획을 좀 더 자세하게 반영할 수 있다. 한편 계획기간을 나누는 것뿐만 아니라 아래처럼 전체 계획기간을 고려하여 대해 하나의 건설 설비 수를 제약하는 방식도 제공하고 있다. 앞서 설명한 방식은 계획기간을 부분적으로 나눠 제약하는 방식에 대해 설명하였고, 주요 제약조건의 key값은 <code>Const_max_built</code>와 <code>max_built</code>를 사용했다. 이와 다르게 계획기간을 나누지 않고 전체 계획기간에 대해 하나의 제약으로 고려하려면 <code>Const_max_unit</code>, <code>max_unit</code>으로 갈음하여 제약식을 생성하면 된다(생성 방법 동일).
+</small></p>
+</blockquote>
+<p><img alt="연료전환예시" src="../img/4_const_max.png" /></p>
+<h3 id="-">건설 제약조건 - 설치용량</h3>
+<ul>
+<li>장기전원계획에서 정책적 혹은 환경적 요인으로 인해 미래 계획기간 동안에 설비의 특정 용량만큼 반드시 설치해야 하거나, 특정 용량을 넘기지 않는 상황을 반영해야 하는 상황이 존대한다. 이를 반영하기 위해 OPEN설치용량에 대한 제약조건을 지원한다. 반복적인 설명을 피하기 위해 최대 설치용량 제약조건을 기준으로 설명하며, 최소 설치용량에 대한 제약조건은 최대 설치용량에 대한 제약조건 설정방법과 동일하다. 최대와 최소 설치용량 제약조건 설정에 있어 대칭되는 파일 혹은 key값은 아래와 같다.</li>
+</ul>
+<table style="width: 100%; table-layout: fixed; text-align: center;">
+  <col style="width: 50%;">
+  <col style="width: 50%;">
+  <thead>
+    <tr>
+      <th>최대 설치용량 제약조건</th>
+      <th>최소 설치용량 제약조건</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>carriers-year-max_capacity.csv</code></td>
+      <td><code>carriers-year-min_capacity.csv</code></td>
+    </tr>
+    <tr>
+      <td><code>Const_max_capacity</code></td>
+      <td><code>Const_min_capacity</code></td>
+    </tr>
+    <tr>
+      <td><code>max_capacity</code></td>
+      <td><code>min_capacity</code></td>
+    </tr>
+  </tbody>
+</table>
+
+<p><span style="font-size: 0.75rem; font-weight: 700;">[계획기간 내 시점별로 동일한 목표값 &amp; 단일설비]</span></p>
+<blockquote>
+<p>계획기간 동안 시점별로 제약조건의 목표값을 동일하게 설정하는 방법을 다룬다. 여기서 설명하는 방법은 특정 carrier의 설비들 중에서 1기에 대해 제약조건을 설정하는 방식을 보여준다.</p>
+</blockquote>
+<ul>
+<li><em>(생성 방법 A – 설비 파일에 제약조건 정보 입력)</em> <code>generators.csv</code>파일에서 제약조건을 추가하고자 하는 설비의 행에 <code>Const_max_capacity</code> 컬럼을 추가하고, 컬럼의 값으로 user를 입력한다.</li>
+</ul>
+<div style="overflow-x: auto; text-align: center;">
+
+  <style>
+  table.dataframe {
+      margin-left: auto;
+      margin-right: auto;
+  }
+
+  .dataframe thead th,
+  .dataframe th,
+  .dataframe td {
+      text-align: center !important;
+  }
+  </style>
+
+  <table border="1" class="dataframe dataframe">
+    <thead>
+      <tr style="text-align: right;">
+        <th>name</th>
+        <th>bus</th>
+        <th>carrier</th>
+        <th>committable</th>
+        <th>start_date</th>
+        <th>end_date</th>
+        <th>p_nom</th>
+        <th>nb_0</th>
+        <th>Const_max_capacity</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <th>신규수소전소 #1</th>
+        <td>경남</td>
+        <td>H2 100</td>
+        <td>True</td>
+        <td>2034-09-01</td>
+        <td>2100-01-01</td>
+        <td>500</td>
+        <td>1</td>
+        <td>user</td>
+      </tr>
+    </tbody>
+  </table>
+
+  </div>
+
+<ul>
+<li><em>(생성 방법 A – 시나리오 파일에 제약조건 정보 입력)</em> 이 방식은 주로 시나리오 파일을 통해 모든 bus에 생성한 carrier 설비에 대해 각각 제약조건을 입력하는 방식이다. <code>config_test.yaml</code> 파일에서 제약조건을 적용하고자 하는 <code>carrier</code>에 대한 설비에 key-value를 입력해야 한다. 해당 파일의 <code>{electricity:carrier}</code>에 key-value값으로 <code>{Const_max_capacity: user}</code>를 입력하면 된다(<code>carrier</code>는 발전기 혹은 저장장치의 <code>carrier</code>만 대상으로 함). 예를 들어, 아래 그림처럼 제약조건에 대한 key-value를 입력하면 사용자는 전체 bus에 위치한 모든 수소 전소 후보 설비에 대해 각각 bus별로 최대 설비용량 제약조건의 정보를 입력한 것을 의미한다.</li>
+</ul>
+<p><code>yaml
+    solar:
+      start_date: 2035-01-01
+      Candidate: True
+      Const_max_capacity: user</code></p>
+<ul>
+<li><em>(생성 방법 B – 설비 파일에 목표값 입력)</em> 설비파일의 특정 설비 1기에 대한 목표값을 입력하려면, 해당 파일에 컬럼을 추가하는 방식으로 목표값을 입력한다(목표값(단위: MW)은 설치용량을 의미함). 이를 위해 <code>max_capacity</code> 컬럼을 추가하고, 사용자는 해당 제약조건의 최대 설치용량를 설정하면 된다(컬럼의 순서는 중요하지 않음).</li>
+</ul>
+<div style="overflow-x: auto; text-align: center;">
+
+  <style>
+  table.dataframe {
+      margin-left: auto;
+      margin-right: auto;
+  }
+
+  .dataframe thead th,
+  .dataframe th,
+  .dataframe td {
+      text-align: center !important;
+  }
+  </style>
+
+  <table border="1" class="dataframe dataframe">
+    <thead>
+      <tr style="text-align: right;">
+        <th>name</th>
+        <th>bus</th>
+        <th>carrier</th>
+        <th>committable</th>
+        <th>start_date</th>
+        <th>end_date</th>
+        <th>p_nom</th>
+        <th>nb_0</th>
+        <th>Const_max_capacity</th>
+        <th>max_capacity</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <th>신규수소전소 #1</th>
+        <td>경남</td>
+        <td>H2 100</td>
+        <td>True</td>
+        <td>2034-09-01</td>
+        <td>2100-01-01</td>
+        <td>500</td>
+        <td>1</td>
+        <td>user</td>
+        <td>1600</td>
+      </tr>
+    </tbody>
+  </table>
+
+  </div>
+
+<ul>
+<li><em>(생성 방법 B – 시나리오 파일에 목표값 입력)</em> 후보설비에 대해 최대 건설 설비 수 제약조건에 대한 목표값을 입력하려면 <code>config_test.yaml</code> 파일에서 <code>{electricity:carrier}</code>에 key-value값으로 <code>{max_capacity: 목표값}</code>를 입력하면 된다(목표값(단위: MW)은 설치용량을 의미함). 아래 그림처럼 <code>max_capacity</code>를 <code>200</code>으로 입력할 경우, 계획기간 동안 태양광의 최대 설치용량을 모든 bus에 각각 200MW로 제한하는 것을 의미한다.</li>
+</ul>
+<p><code>yaml
+    solar:
+      start_date: 2035-01-01
+      Candidate: True
+      Const_max_capacity: user
+      max_capacity: 200</code></p>
+<ul>
+<li><em>(생성 방법 C – 설비파일/시나리오 파일에서 설정한 제약조건 활성화)</em> 단일설비에 제약조건을 설정하는 방식은 설비 파일과 시나리오 파일 모두 별도의 활성화 과정 없이 A와 B과정을 거치면 제약조건이 활성화된다.</li>
+</ul>
+<p><span style="font-size: 0.75rem; font-weight: 700;">[계획기간 내 시점별로 동일한 목표값 &amp; 복수설비]</span></p>
+<blockquote>
+<p>계획기간 동안 시점별로 제약조건의 목표값을 동일하게 설정하는 방법을 다룬다. 구체적으로 여기서 설명하는 방법은 특정 <code>carrier</code>의 설비들 중에서 2기 이상에 대해 제약조건을 설정하는 방식을 보여준다. 특히, 이 방법은 특정 지역의 재생에너지 잠재량에 대한 제약을 설정할 때 추천하며, 잠재량 같은 계획기간 동안에 일정한 목표값을 설정할 때 용이하다.</p>
+</blockquote>
+<ul>
+<li><em>(생성 방법 A – 설비 파일에 제약조건 정보 입력)</em> <code>generators.csv</code> 파일에 <code>Const_max_capacity</code> 컬럼을 추가한다. 다음으로 제약조건을 추가하고 하는 설비 행들에 사용자가 정의한 제약조건명(max_capacity_H2 100_육지)을 입력한다. 참고로 『계획기간 내 시점별로 동일한 목표값 &amp; 단수설비』와 다르게 value는 사용자가 직접 정의해야 한다.</li>
+</ul>
+<div style="overflow-x: auto; text-align: center;">
+
+  <style>
+  table.dataframe {
+      margin-left: auto;
+      margin-right: auto;
+  }
+
+  .dataframe thead th,
+  .dataframe th,
+  .dataframe td {
+      text-align: center !important;
+  }
+  </style>
+
+  <table border="1" class="dataframe dataframe">
+    <thead>
+      <tr style="text-align: right;">
+        <th>name</th>
+        <th>bus</th>
+        <th>carrier</th>
+        <th>committable</th>
+        <th>start_date</th>
+        <th>end_date</th>
+        <th>p_nom</th>
+        <th>nb_0</th>
+        <th>Const_max_built</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <th>신규수소전소 #1</th>
+        <td>경남</td>
+        <td>H2 100</td>
+        <td>True</td>
+        <td>2034-09-01</td>
+        <td>2100-01-01</td>
+        <td>500</td>
+        <td>1</td>
+        <td>max_built_H2_100_육지</td>
+      </tr>
+      <tr>
+        <th>신규수소전소 #1</th>
+        <td>서울</td>
+        <td>H2 100</td>
+        <td>True</td>
+        <td>2034-09-01</td>
+        <td>2100-01-01</td>
+        <td>500</td>
+        <td>1</td>
+        <td>max_built_H2_100_육지</td>
+      </tr>
+    </tbody>
+  </table>
+  </div>
+
+<ul>
+<li><em>(생성 방법 A - 시나리오파일에 제약조건 정보 입력)</em> 이 방식은 주로 시나리오 파일을 통해 모든 bus에 생성한 carrier 설비에 대해 각각 제약조건을 입력하는 방식이다. <code>config_test.yaml</code> 파일에서 제약조건을 적용하고자 하는 carrier에 대한 설비에 key-value를 입력해야 한다. 해당 파일의 <code>{electricity:carrier}</code>에 key-value값으로 <code>{Const_max_capacity: 사용자 정의}</code>를 입력하면 된다(<code>carrier</code>는 발전기 혹은 저장장치의 <code>carrier</code>만 대상으로 함). 예를 들어, 아래 그림처럼 제약조건에 대한 key-value를 입력하면 사용자는 시나리오 파일로 정의한 모든 bus의 태양광 설비에 대해서만 각각 bus별로 최대 설치용량 제약조건에 대한 정보를 입력한 것을 의미한다.</li>
+</ul>
+<p>고쳐고쳐
+  <code>yaml
+    solar:
+      start_date: 2035-01-01
+      Candidate: True
+      Const_max_capacity: max_capactiy_solar</code></p>
+<ul>
+<li><em>(생성 방법 A – 특정 <code>carrier</code>에 대한 모든 설비(설비 파일, 시나리오 파일)에 대해 제약조건 정보 입력)</em> 기존에 작성한 특정 <code>carrier</code>의 모든 설비(기존/건설예정/후보 설비)에도 최대 설치용량 제약을 넣어주려면 <code>config_test.yaml</code> 파일에서 <code>{scenario:설비명}</code>에 제약조건에 대한 key를 입력한다. 다음으로 하위 key와 value를 해당 <code>carrier</code>와 사용자가 정의한 제약조건명을 입력해야 한다. 아래 그림처럼 입력하면 <code>generators.csv</code>와 <code>config_test.yaml</code>에 입력한 모든 태양광 발전설비에 해당 제약조건 정보가 입력된다(설비명은 설비에 대한 <code>component</code>를 의미).</li>
+</ul>
+<p><code>yaml
+      Generator:
+        Const_max_built:
+          solar : max_capacity_solar</code></p>
+<ul>
+<li><em>(생성 방법 B – 설비파일과 시나리오 파일의 제약조건 목표값 입력)</em> 계획기간 동안 복수설비에 대해 동일한 목표값을 입력하려면 <code>PowerGrid/resources/scenarios/carriers.csv</code> 파일에 값을 입력해야 한다. 이 부분은 사용자의 이해를 돕기 위해 제약조건 활성화 방법에서 이어서 설명하도록 한다.</li>
+<li><em>(생성 방법 C - 최대 건설 설비 수 제약조건 활성화)</em> <code>PowerGrid/resources/scenarios/carriers.csv</code> 파일에 제약조건에 대한 정보를 입력함으로써 제약조건을 활성화할 수 있다. 여기서 <code>name</code>은 사용자가 정의한 제약조건 명(value)을 입력하고, object는 제약조건의 key를 입력해야 한다. 여기서 제약조건의 목표값을 입력(생성 방법 B)하려면 해당 파일에서 <code>max_built</code> 컬럼을 추가하여 목표값을 입력해야 한다.</li>
+</ul>
+<div style="overflow-x: auto; text-align: center;">
+
+  <style>
+  table.dataframe {
+      margin-left: auto;
+      margin-right: auto;
+  }
+
+  .dataframe thead th,
+  .dataframe th,
+  .dataframe td {
+      text-align: center !important;
+  }
+  </style>
+
+  <table border="1" class="dataframe dataframe">
+    <thead>
+      <tr style="text-align: right;">
+        <th></th>
+        <th>object</th>
+        <th>max_capacity</th>
+      </tr>
+      <tr>
+        <th>name</th>
+        <th></th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <th>max_capacity_PV_전남</th>
+        <td>Const_max_capacity</td>
+        <td>187173</td>
+      </tr>
+    </tbody>
+  </table>
+
+  </div>
+
+<p><span style="font-size: 0.75rem; font-weight: 700;">[계획기간 내 시점별로 다른 목표값 &amp; 복수설비]</span></p>
+<blockquote>
+<p>계획기간 동안 시점별로 제약조건의 목표값을 다르게 설정하는 방법을 다룬다. 시점별로 설치용량의 목표값을 설정할 수 있기 때문에 사용자는 계획기간 동안 맞춤화 된 제약조건을 설정할 수 있다. 여기서 설명하는 방법은 특정 <code>carrier</code>의 설비들 중에서 1기 이상에 대해 제약조건을 설정하는 방식을 보여준다. 또한, 특정 제약조건에 대해 특정 <code>carrier</code>의 모든 설비를 대상으로 제약조건을 일괄적으로 설정할 수 있는 방법도 다룬다.</p>
+</blockquote>
+<ul>
+<li><em>(생성 방법 A – 설비 파일에 제약조건 정보 입력)</em> <code>generators.csv</code> 파일에 <code>Const_max_capacity</code> 컬럼을 추가하고, 제약조건을 추가하고 하는 설비 행들에 사용자가 정의한 제약조건명(<code>max_built_H2 100_경남</code>)을 입력한다.</li>
+</ul>
+<div style="overflow-x: auto; text-align: center;">
+
+  <style>
+  table.dataframe {
+      margin-left: auto;
+      margin-right: auto;
+  }
+
+  .dataframe thead th,
+  .dataframe th,
+  .dataframe td {
+      text-align: center !important;
+  }
+  </style>
+
+  <table border="1" class="dataframe dataframe">
+    <thead>
+      <tr style="text-align: right;">
+        <th>name</th>
+        <th>bus</th>
+        <th>carrier</th>
+        <th>committable</th>
+        <th>start_date</th>
+        <th>end_date</th>
+        <th>p_nom</th>
+        <th>nb_0</th>
+        <th>Const_max_capacity</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <th>신규수소전소 #1</th>
+        <td>경남</td>
+        <td>H2 100</td>
+        <td>True</td>
+        <td>2034-09-01</td>
+        <td>2100-01-01</td>
+        <td>500</td>
+        <td>1</td>
+        <td>max_capacity_H2_100_육지</td>
+      </tr>
+      <tr>
+        <th>신규수소전소 #1</th>
+        <td>서울</td>
+        <td>H2 100</td>
+        <td>True</td>
+        <td>2034-09-01</td>
+        <td>2100-01-01</td>
+        <td>500</td>
+        <td>1</td>
+        <td>max_capacity_H2_100_육지</td>
+      </tr>
+    </tbody>
+  </table>
+
+  </div>
+
+<ul>
+<li><em>(생성 방법 A – 시나리오파일에 제약조건 정보 입력)</em> 이 방식은 주로 시나리오 파일을 통해 모든 bus에 생성한 carrier 설비에 대해 각각 제약조건을 입력하는 방식이다. <code>config_test.yaml</code> 파일에서 제약조건을 적용하고자 하는 carrier에 대한 설비에 key-value를 입력해야 한다. 해당 파일의 <code>{electricity:carrier}</code>에 key-value값으로 <code>{Const_max_capacity: 사용자 정의}</code>를 입력하면 된다(<code>carrier</code>는 발전기 혹은 저장장치의 <code>carrier</code>만 대상으로 함). 예를 들어, 아래 그림처럼 제약조건에 대한 key-value를 입력하면 사용자는 시나리오 파일로 정의한 모든 bus의 태양광 설비에 대해 각각 bus별로 최대 설치용량 제약조건에 대한 정보를 입력한 것을 의미한다.</li>
+</ul>
+<p><code>yaml
+    solar:
+      start_date: 2025-01-01
+      candidate: True
+      Const_max_capacity: max_capacity_PV</code></p>
+<ul>
+<li><em>(생성 방법 A – 특정 carrier에 대한 모든 설비(설비 파일, 시나리오 파일)에 대해 제약조건 정보 입력)</em> 기존에 작성한 특정 <code>carrier</code>의 모든 설비(기존/건설예정/후보 설비)에도 최대 설치용량 제약을 넣어주려면 <code>config_test.yaml</code> 파일에서 <code>{scenario:설비명}</code>에 제약조건에 대한 key를 입력한다. 다음으로 하위 key와 value를 해당 <code>carrier</code>와 사용자가 정의한 제약조건명을 입력해야 한다. 아래 그림처럼 입력하면 <code>generator.csv</code>와 <code>config_test.yaml</code>에 입력한 모든 태양광 설비에 해당 제약조건 정보가 입력된다(설비명은 설비에 대한 component를 의미).</li>
+</ul>
+<p><code>yaml
+    Const_max_capacity:
+      solar: max_capacity_PV</code></p>
+<ul>
+<li><em>(생성 방법 B – 설비파일과 시나리오 파일의 제약조건 목표값 입력)</em> 설비 파일 혹은 시나리오 파일에 입력했던 제약조건의 목표값을 입력하려면 <code>PowerGrid/resources/scenarios/carriers-year-max_capacity.csv</code>를 이용해야 한다. 해당 파일에서 <code>name</code>은 계획기간의 연도를 의미하고, 각 컬럼은 제약조건 명을 의미한다.</li>
+</ul>
+<div style="overflow-x: auto; text-align: center;">
+
+  <style>
+  table.dataframe {
+      margin-left: auto;
+      margin-right: auto;
+  }
+
+  .dataframe thead th,
+  .dataframe th,
+  .dataframe td {
+      text-align: center !important;
+  }
+  </style>
+
+  <table border="1" class="dataframe dataframe">
+    <thead>
+      <tr style="text-align: right;">
+        <th>name</th>
+        <th>max_capacity_2_PV_전남</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <th>2024</th>
+        <td>2000</td>
+      </tr>
+      <tr>
+        <th>2025</th>
+        <td>3000</td>
+      </tr>
+      <tr>
+        <th>2026</th>
+        <td>4000</td>
+      </tr>
+    </tbody>
+  </table>
+
+  </div>
+
+<blockquote>
+<p><strong>📢 주의사항</strong>
+<small>
+최대 설치용량을 입력할 때는 연도별 누적 설치용량으로 입력해야 한다. 예를 들어 2024년부터 2026년까지 연도별 설치용량을 각각 2000MW, 1000MW, 1000MW로 입력하고자 하는 경우 아래그림의 좌측처럼 입력해야 한다.).
+</small></p>
+</blockquote>
+<ul>
+<li><em>(생성 방법 C - 최대 건설 설비 수 제약조건 활성화)</em> 설비 파일과 시나리오 파일의 제약조건 모두 활성화 방법은 동일하다. <code>PowerGrid/resources/scenarios/carriers.csv</code> 파일에 활성화하고자 하는 제약조건에 대한 정보를 입력함으로써 해당 제약조건을 활성화할 수 있다. 여기서 <code>name</code>은 사용자가 정의한 제약조건 명(value)을 입력하고, object는 제약조건의 key를 입력해야 한다. 이 과정은 제약조건을 최적화 문제에 반영하기 위해 반드시 필요한 과정이다.</li>
+</ul>
+<blockquote>
+<p>📢 <strong>주의사항</strong>
+<small>
+- 특정 설비에 대해 복수의 제약조건 적용) 설치용량 제약조건은 시나리오에 따라 특정 설비에 복수의 제약조건을 설정해야 하는 경우가 있다. 예를 들어, 전체 bus에 위치한 태양광 설비에 대한 태양광 설치 잠재량을 적용하면서 동시에 특정 bus에 위치한 태양광 설비에 대해 최대 설치용량을 제약하는 상황이 여기에 해당한다.
+- 아래 그림을 예시로 보면 전체 bus의 태양광 설비에 max_capacity_PV_한국 잠재량이라는 제약조건을 적용할 때 key값으로 <code>Const_max_capacity</code>를 사용했다. 여기에 추가적으로 ‘PV#4’와 ‘PV#5’ <code>max_capacity_PV_전남전북</code> 이라는 제약조건을 적용하려면 앞선 key값에 value가 이미 채워져 있기 때문에 입력할 수 없다. 따라서 OPEN은 이러한 시나리오를 대응하기 위해 설치용량의 제약조건은 여러 개의 key값을 제공한다. 이를 통해 ‘PV#4’와 ‘PV#5’ 설비에는 새로운 key값인 <code>Const_max_capacity_2</code>를 이용하여 제약조건을 설정할 수 있고, 설정방법은 앞서 설명한 방법과 동일하다. 최대 설치용량과 최소 설치용량 제약조건에 대해 제공되는 추가적인 key 값 목록은 아래 표와 같다.
+</small></p>
+</blockquote>
+<p><img alt="태양광 설치량" src="../img/4_installed_capacity.png" /></p>
+<table style="width: 100%; table-layout: fixed; text-align: center;">
+  <col style="width: 230px;">
+  <col style="width: 330px;">
+  <col style="width: 330px;">
+
+  <thead>
+    <tr>
+      <th>제약조건 구분</th>
+      <th>제약조건의 key</th>
+      <th>제약조건 목표값의 key</th>
+    </tr>
+  </thead>
+  <tbody>
+    <!-- 최대 설치용량 -->
+    <tr>
+      <td rowspan="3">최대 설치용량</td>
+      <td><code>Const_max_capacity</code></td>
+      <td><code>max_capacity</code></td>
+    </tr>
+    <tr>
+      <td><code>Const_max_capacity_2</code></td>
+      <td><code>max_capacity_2</code></td>
+    </tr>
+    <tr>
+      <td><code>Const_max_capacity_3</code></td>
+      <td><code>max_capacity_3</code></td>
+    </tr>
+    <!-- 최소 설치용량 -->
+    <tr>
+      <td rowspan="2">최소 설치용량</td>
+      <td><code>Const_min_capacity</code></td>
+      <td><code>min_capacity</code></td>
+    </tr>
+    <tr>
+      <td><code>Const_min_capacity_2</code></td>
+      <td><code>min_capacity_2</code></td>
+    </tr>
+
+  </tbody>
+</table>
+
+<h3 id="_8">온실가스 배출량 제약조건</h3>
+<ul>
+<li>전력시스템에서도 넷제로가 강조됨에 따라 전원계획수립에 있어 온실가스 배출량이 전원믹스를 결정하는 중요 요인으로 작용하고 있다. OPEN은 온실가스 배출량 상한을 고려하여 전원계획과 운영계획 수립을 지원한다. 전력시스템에서 온실가스를 배출하는 연료원은 석탄, 중유, LNG, 석탄-암모니아 혼소, IGCC, 중유 등으로 특정 연료원이 정해져 있다. 따라서 배출량 제약조건은 특정 연료원(carrier)에 대한 모든 설비들에 대해 일괄 적용되어야 한다. 여기서 제약조건은 사용자 정의(제약조건의 value)가 불필요하므로, 온실가스 배출량 제약조건의 value는 co2_eq로 고정된 자료형 값을 사용한다. 즉, 일반적으로 온실가스 제약조건 설정에 있어 계획기간 별로 다른 온실가스 배출 목표값 설정하고, 복수 설비에 대해 적용하기 때문에 앞선 제약조건의 설명 방식과 다르게 하나의 방법만을 설명한다. 설정 방법에 대한 이해를 올리기 위해 <code>igcc</code>, <code>bioheavyoil</code>, <code>coal</code>, <code>LNG</code>, <code>oil</code>, <code>LNG-chp</code>, <code>coal-ammonia 50</code>, <code>LNG-H2 50</code>를 <code>carrier</code>로 갖는 모든 발전기(전체 bus에 위치)에 대해 co2_eq라는 제약조건을 설정한다(key값은 <code>Const_max_emission</code>로 변경할 수 없음).</li>
+</ul>
+<p><span style="font-size: 0.75rem; font-weight: 700;">[계획기간 내 시점별로 다른 목표값 &amp; 복수설비]</span></p>
+<ul>
+<li><em>(생성 방법 A – 특정 carrier에 대한 모든 설비(설비 파일, 시나리오 파일)에 대해 제약조건 정보 입력)</em> 기존에 작성한 특정 <code>carrier</code>의 모든 설비(기존/건설예정/후보 설비)에도 최대 설치용량 제약을 넣어주려면 <code>config_test.yaml</code> 파일에서 <code>{scenario:설비명}</code>에 제약조건에 대한 key를 입력한다. 다음으로 하위 key와 value를 해당 <code>carrier</code>와 사용자가 정의한 제약조건명을 입력해야 한다. 아래 그림처럼 입력하면 generator.csv와 <code>config_test.yaml</code>에 입력한 모든IGCC, 바이오 중유, 석탄, LNG, 중유, LNG 열병합, 암모니아 혼소, 수소 혼소 설비에 해당 제약조건 정보가 입력된다(설비명은 설비에 대한 component를 의미).</li>
+</ul>
+<p><code>yaml
+    Const_max_emission:
+      igcc: co2_eq
+      bioheavyoil: co2_eq
+      coal: co2_eq
+      LNG: co2_eq
+      oil: co2_eq
+      LNG-chp: co2_eq
+      coal-ammonia 50: co2_eq
+      LNG-H2 50: co2_eq</code></p>
+<ul>
+<li><em>(생성 방법 B – 설비파일과 시나리오 파일의 제약조건 목표값 입력)</em> 설비 파일 혹은 시나리오 파일에 입력했던 제약조건의 목표값을 입력하려면 <code>PowerGrid/resources/scenarios/carriers-year-max_emission.csv</code>를 이용해야 한다. 해당 파일에서 <code>name</code>은 시점을 의미하고, 컬럼은 제약조건명(<code>co2_eq</code>)을 의미한다. 즉, 해당 컬럼의 값에 연도별 온실가스 배출 상한량(단위: tonCO2eq)을 입력한다.</li>
+</ul>
+<div style="overflow-x: auto; text-align: center;">
+
+  <style>
+  table.dataframe {
+      margin-left: auto;
+      margin-right: auto;
+  }
+
+  .dataframe thead th,
+  .dataframe th,
+  .dataframe td {
+      text-align: center !important;
+  }
+  </style>
+
+  <table border="1" class="dataframe dataframe">
+    <thead>
+      <tr style="text-align: right;">
+        <th>name</th>
+        <th>co2_eq</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <th>2025</th>
+        <td>215800000</td>
+      </tr>
+      <tr>
+        <th>2030</th>
+        <td>145900000</td>
+      </tr>
+      <tr>
+        <th>2035</th>
+        <td>94900151</td>
+      </tr>
+    </tbody>
+  </table>
+  </div>
+
+<blockquote>
+<p>📢 <strong>주의사항</strong>
+<small>
+- 온실가스 배출 계수 입력
+  - carrier별로 온실가스 배출계수는 다른데, 사용자는 PowerGrid/System Data/carriers.csv에서 연료원별 배출계수를 입력 및 수정할 수 있다. 해당 파일에서 name은 연료원(carrier)를 의미하고, 온실가스 배출계수에 대한 컬럼은 co2, nox, pm2.5, sox, tsm이다.
+</small></p>
+</blockquote>
+<ul>
+<li><em>(생성 방법 C – 온실가스 배출량 제약조건 활성화)</em> 설비 파일과 시나리오 파일의 제약조건 모두 활성화 방법은 동일하다. <code>PowerGrid/resources/scenarios/carriers.csv</code> 파일에 활성화하고자 하는 제약조건에 대한 정보를 입력함으로써 해당 제약조건을 활성화할 수 있다. 여기서 <code>name</code>은 사용자가 정의한 제약조건 명(value)을 입력하고, <code>object</code>는 제약조건의 key를 입력해야 한다.<blockquote>
+<p>📢 <strong>주의사항</strong>
+<small>
+- <code>carrier</code>는 OPEN에서 정의하고 있는 명칭을 그대로 사용해야 한다. 이를 위반할 경우 OPEN은 <code>carrier</code>를 인식하지 못해 오류가 발생한다. 또한, 사용자는 정의한 제약조건의 이름을 입력파일 내에서 동일하게 사용해야 하며, 이를 어길 경우 OPEN은 제약조건을 인식할 수 없다.
+</small></p>
+</blockquote>
+</li>
+</ul>
+<div style="overflow-x: auto; text-align: center;">
+
+  <style>
+  table.dataframe {
+      margin-left: auto;
+      margin-right: auto;
+  }
+
+  .dataframe thead th,
+  .dataframe th,
+  .dataframe td {
+      text-align: center !important;
+  }
+  </style>
+
+  <table border="1" class="dataframe dataframe">
+    <thead>
+      <tr style="text-align: right;">
+        <th>name</th>
+        <th>object</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <th>co2_eq</th>
+        <td>Const_max_emission</td>
+      </tr>
+    </tbody>
+  </table>
+
+  </div>
+
+<h3 id="tip"><em>(Tip!)</em> 계획기간 내 시점별 제약조건의 목표값 입력 방법</h3>
+<ul>
+<li>OPEN에서 시나리오 폴더 내의 파일(<code>carriers-year-xxxx.csv</code>)들을 이용해 특정 년도에만 제약조건의 목표값을 입력할 때 여러 방법이 있다. 설명을 위해 <code>max_capacity_Nuclear</code>라는 제약조건의 목표값으로 2037년과 2038년에 각각 1400MW, 1800MW를 입력하는 것을 가정하였다. 아래 방법은 모두 OPEN에 아래 방법은 동일한 방법이므로, 사용자는 아래 방법 중에 선택하여 목표값을 입력하면 된다.</li>
+<li>
+<p>방법 1. 해당 연도만 목표값을 넣고, 불필요한 연도는 비워두는 경우</p>
+<div style="overflow-x: auto; text-align: center;">
+<p><style>
+table.dataframe {
+    margin-left: auto;
+    margin-right: auto;
+}</p>
+<p>.dataframe thead th,
+.dataframe th,
+.dataframe td {
+    text-align: center !important;
+}
+</style></p>
+<p><table border="1" class="dataframe dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>name</th>
+      <th>max_capacity_Nuclear</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>2024</th>
+      <td></td>
+    </tr>
+    <tr>
+      <th>2025</th>
+      <td></td>
+    </tr>
+    <tr>
+      <th>2026</th>
+      <td></td>
+    </tr>
+    <tr>
+      <th>2027</th>
+      <td></td>
+    </tr>
+    <tr>
+      <th>2028</th>
+      <td></td>
+    </tr>
+    <tr>
+      <th>2029</th>
+      <td></td>
+    </tr>
+    <tr>
+      <th>2030</th>
+      <td></td>
+    </tr>
+    <tr>
+      <th>2031</th>
+      <td></td>
+    </tr>
+    <tr>
+      <th>2032</th>
+      <td></td>
+    </tr>
+    <tr>
+      <th>2033</th>
+      <td></td>
+    </tr>
+    <tr>
+      <th>2034</th>
+      <td></td>
+    </tr>
+    <tr>
+      <th>2035</th>
+      <td></td>
+    </tr>
+    <tr>
+      <th>2036</th>
+      <td></td>
+    </tr>
+    <tr>
+      <th>2037</th>
+      <td>1400</td>
+    </tr>
+    <tr>
+      <th>2038</th>
+      <td>1800</td>
+    </tr>
+  </tbody>
+</table></p>
+</div>
+</li>
+<li>
+<p>방법 2. 불필요한 연도의 행은 삭제하는 경우</p>
+<div style="overflow-x: auto; text-align: center;">
+<p><style>
+table.dataframe {
+    margin-left: auto;
+    margin-right: auto;
+}</p>
+<p>.dataframe thead th,
+.dataframe th,
+.dataframe td {
+    text-align: center !important;
+}
+</style></p>
+<p><table border="1" class="dataframe dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>name</th>
+      <th>max_capacity_Nuclear</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>2037</th>
+      <td>1400</td>
+    </tr>
+    <tr>
+      <th>2038</th>
+      <td>1800</td>
+    </tr>
+  </tbody>
+</table></p>
+</div>
+</li>
+<li>
+<p>방법 3. 불필요한 연도의 행에 0을 입력하는 경우
+    <div style="overflow-x: auto; text-align: center;"></p>
+<p><style>
+table.dataframe {
+    margin-left: auto;
+    margin-right: auto;
+}</p>
+<p>.dataframe thead th,
+.dataframe th,
+.dataframe td {
+    text-align: center !important;
+}
+</style></p>
+<p><table border="1" class="dataframe dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>name</th>
+      <th>max_capacity_Nuclear</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>2024</th>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>2025</th>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>2026</th>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>2027</th>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>2028</th>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>2029</th>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>2030</th>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>2031</th>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>2032</th>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>2033</th>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>2034</th>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>2035</th>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>2036</th>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>2037</th>
+      <td>1400</td>
+    </tr>
+    <tr>
+      <th>2038</th>
+      <td>1800</td>
+    </tr>
+  </tbody>
+</table></p>
+</div>
+<h2 id="how-to-execute-open">How to execute OPEN</h2>
+</li>
+<li>
+<p>OPEN은 코드 편집기(PyCharm, VSCode 등) 또는 PowerShell을 이용해 실행할 수 있으며, 시뮬레이션 진행 상황에 대한 이메일 알림 기능을 설정할 수 있다. 두 실행 방식 모두 실행에 앞서 입력 데이터 및 시나리오 설정 파일이 준비되어 있어야 한다.</p>
+</li>
 <li>코드 편집기를 사용하는 경우에는 다음과 같이 OPEN의 함수를 호출하여 실행할 수 있다. (VScode를 사용하는 경우 코드 내에 지정된 시나리오 이름과 경로 설정이 사용자의 환경에 맞게 수정되어야 함)</li>
 </ul>
-<p>```python
-  import os
-  from open import Network
-  from open._helpers import call_config</p>
-<p>if <strong>name</strong> == '<strong>main</strong>':
-      yaml_file_name = (
-          "resources/"
-          "sub_scenario_1.yaml"
-      )</p>
-<pre><code>  config = call_config(
-      yaml_file_name
-  )
+<pre><code class="language-python">import os
+from open import Network
+from open._helpers import call_config
 
-  kwargs = {}
+if __name__ == '__main__':
+    yaml_file_name = (
+        &quot;resources/&quot;
+        &quot;sub_scenario_1.yaml&quot;
+    )
 
-  n = Network()
-  n = n.module.run_GTEP(
-      config = config,
-      **kwargs
-  )
+    config = call_config(
+        yaml_file_name
+    )
+
+    kwargs = {}
+
+    n = Network()
+    n = n.module.run_GTEP(
+        config=config,
+        **kwargs
+    )
 </code></pre>
-<p>```</p>
+<h2 id="open-outputs">OPEN Outputs</h2>
+<ul>
+<li>OPEN은 모든 결과 파일들은 Excel 파일 형식(.xlsx)로 제공한다. 시뮬레이션이 종료되면, 해당 시스템인 <code>System Data</code>폴더의 하위 경로에 result 폴더가 자동으로 생성되며 생성되는데 그 안에 시나리오 이름을 기준으로 한 하위 폴더가 생성된다. 앞선 예시와 동일하게 <code>sub_scenario_1</code> 시나리오의 실행 결과는 <code>PowerGrid/results/sub_scenario_1</code> 폴더 내에서 확인할 수 있다. OPEN은 투자 및 운영 계획을 포함한 다양한 지표에 대한 결과 데이터를 제공하며, 사용자의 분석 편의를 위해 요약본과 세부 결과를 구분하여 제공한다. 아래는 PowerGrid 시스템에서 <code>sub_scenario_1</code> 시나리오를 실행했을 때 생성되는 연도별, 연료원별 결과 파일 구조의 간단한 예시를 보여주며, 구체적인 결과는 사용자가 OPEN을 실행하여 확인할 수 있다. 아래 예시는 계획기간이 2025년부터 2035년까지를 대상으로 했을 때를 보여주며, 파일이나 폴더에서 연도는 계획기간에 따라 변경될 수 있다. 특히, <code>app_res</code> 폴더는 자세한 항목별 실행 결과를 제공하는데, 해당 파일을 확인하려면 <code>plot_network</code>라는 모듈을 반드시 실행해야 한다. 이를 통해 OPEN은 주요 결과 데이터를 막대, 선, 원 그래프 등으로 시각화한 이미지 파일도 제공한다. </li>
+</ul>
+<pre>
+├─examples
+└─PowerGrid
+    ├─System Data
+    └─results
+        └─sub_scenario_1
+            ├─app_res
+            │   sub_scenario_1_fuel_name 연료전환 설비 개별 용량.xlsx
+            │   sub_scenario_1_fuel_name 연료전환 설비 그룹화된 평균 이용률.xlsx
+            │   sub_scenario_1_발전량.xlsx
+            │   sub_scenario_1_발전믹스.xlsx
+            │   sub_scenario_1_방전량.xlsx
+            │   sub_scenario_1_배출량.xlsx
+            │   sub_scenario_1_부하공급지장량.xlsx
+            │   sub_scenario_1_비용.xlsx
+            │   sub_scenario_1_설비별 비용.xlsx
+            │   sub_scenario_1_연료원별 연료비단가.xlsx
+            │   sub_scenario_1_용량.xlsx
+            │   sub_scenario_1_재생에너지 용량.xlsx
+            │   sub_scenario_1_재생에너지 출력제어량.xlsx
+            │   sub_scenario_1_재생에너지 출력제어비율.xlsx
+            │   sub_scenario_1_전력수요량.xlsx
+            │   sub_scenario_1_좌초자산 및 기대수익.xlsx
+            │   sub_scenario_1_충전량.xlsx
+            │   sub_scenario_1_평균 이용률.xlsx
+            │   conversion_state_chart_coal 연료전환.png
+            │   conversion_state_chart_LNG 연료전환.png
+            │   line_chart_coal 연료전환 대상 설비 이용률.png
+            │   line_chart_LNG 연료전환 대상 설비 이용률.png
+            │   line_chart_운영, 설치 비용.png
+            │   line_chart_재생에너지 이용률 프로파일.png
+            │   pie_bar_chart_발전량_xxxx.png
+            │   pie_bar_chart_용량_xxxx.png
+            │   stack_area_chart_fuel 연료전환 용량.png
+            │   stack_area_chart_석탄 기존 발전기 및 계획된 용량.png
+            │   stack_area_chart_재생에너지 지역별 연도별 용량.png
+            │   stack_area_chart_전력수요.png
+            │   stack_area_chart_지역간 송전용량 (LT).png
+            └─LT_2025
+            └─ST_2025
+            └─ST_2030
+            └─ST_2035
+</pre>
+
+<ul>
+<li>OPEN은 시나리오 실행 결과를 사용자가 쉽게 파악할 수 있도록 장기 전원 계획 결과와 단기 운영 모의 결과를 구분하여 요약 파일 형태로 제공한다. 단기 운영 계획 결과의 경우 계획기간의 대표연도별로 운영 결과 데이터를 제공한다. (참고:  파일명 중 xxxx는 계획기간의 대표 연도별로 생성되며, 실제 결과에서는 복수의 파일로 제공) </li>
+</ul>
+<table style="width: 100%; table-layout: fixed; text-align: center;">
+  <col style="width: 280px;">
+  <col style="width: 720px;">
+
+  <thead>
+    <tr>
+      <th>파일명</th>
+      <th>설명</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code style="word-break: break-all;">summary_long_term_sub_scenario_1</code></td>
+      <td style="text-align:left;">
+        장기 설비계획의 결과로, 전체 계획기간에 대한 비용, 용량, 발전량, 배출량, 이용률 등의 결과 데이터를 요약
+      </td>
+    </tr>
+    <tr>
+      <td><code style="word-break: break-all;">summary_short_term_sub_scenario_1_xxxx</code></td>
+      <td style="text-align:left;">
+        대표연도 xxxx년의 단기 설비계획 결과로, 비용, 용량, 발전량, 배출량, 이용률 등에 대한 결과 데이터를 요약
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<ul>
+<li>시나리오의 세부적인 결과는 app_res폴더에서 저장되며, 설비의 투자/폐지 계획, 용량, 발전량, 전력수요, 비용 등 다양한 항목을 연도별로 지역별로 정리하여 데이터를 제공하고 있다. 또한, 주요 결과는 시각적 분석을 돕기 위해 그래프 형태로도 함께 제공된다. (참고:  파일명 중 fuel_name은 해당 연료원에 따라 다르게 생성되며, 실제 결과에서는 복수의 파일로 제공)</li>
+</ul>
+<table style="width: 100%; table-layout: fixed; text-align: center;">
+  <col style="width: 320px;">
+  <col style="width: 680px;">
+
+  <thead>
+    <tr>
+      <th>파일명</th>
+      <th>설명</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code style="word-break: break-all;">sub_scenario_1_용량</code></td>
+      <td style="text-align:left;">계획기간 내 연도별·지역별·연료원별 용량 (MW)</td>
+    </tr>
+    <tr>
+      <td><code style="word-break: break-all;">sub_scenario_1_재생에너지 용량</code></td>
+      <td style="text-align:left;">계획기간 내 연도별·지역별 재생에너지원별 용량 (MW)</td>
+    </tr>
+    <tr>
+      <td><code style="word-break: break-all;">sub_scenario_1_fuel_name_연료전환 설비 개별 용량</code></td>
+      <td style="text-align:left;">계획기간 내 발전기의 연도별 연료전환 경로 (MW)</td>
+    </tr>
+    <tr>
+      <td><code style="word-break: break-all;">sub_scenario_1_발전믹스</code></td>
+      <td style="text-align:left;">계획기간 내 연도별·지역별 전원믹스 (%)</td>
+    </tr>
+    <tr>
+      <td><code style="word-break: break-all;">sub_scenario_1_발전량</code></td>
+      <td style="text-align:left;">계획기간 내 지역별·연도별 모든 연료원의 발전량 (MWh)</td>
+    </tr>
+    <tr>
+      <td><code style="word-break: break-all;">sub_scenario_1_재생에너지 출력제어량</code></td>
+      <td style="text-align:left;">계획기간 내 지역별·연도별 재생에너지 출력제어량 (MWh)</td>
+    </tr>
+    <tr>
+      <td><code style="word-break: break-all;">sub_scenario_1_충전량</code></td>
+      <td style="text-align:left;">계획기간 내 양수발전기·저장장치의 충전량 (MWh)</td>
+    </tr>
+    <tr>
+      <td><code style="word-break: break-all;">sub_scenario_1_방전량</code></td>
+      <td style="text-align:left;">계획기간 내 양수발전기·저장장치의 방전량 (MWh)</td>
+    </tr>
+    <tr>
+      <td><code style="word-break: break-all;">sub_scenario_1_전력수요량</code></td>
+      <td style="text-align:left;">계획기간 내 연도별·지역별 전력수요량 (MWh)</td>
+    </tr>
+    <tr>
+      <td><code style="word-break: break-all;">sub_scenario_1_부하공급지장량</code></td>
+      <td style="text-align:left;">계획기간 내 미충족 전력 수요량 (MWh)</td>
+    </tr>
+    <tr>
+      <td><code style="word-break: break-all;">sub_scenario_1_비용</code></td>
+      <td style="text-align:left;">계획기간 내 시스템 설비별 연도별 건설·운영 등 총 시스템 비용 항목 (천억원)</td>
+    </tr>
+    <tr>
+      <td><code style="word-break: break-all;">sub_scenario_1_설비별비용</code></td>
+      <td style="text-align:left;">계획기간 내 세부 설비별 연도별 건설·운영 비용 항목 (천억원)</td>
+    </tr>
+    <tr>
+      <td><code style="word-break: break-all;">sub_scenario_1_좌초자산 및 기대수익</code></td>
+      <td style="text-align:left;">계획기간 내 연도별·지역별·연료원별 기대수익 및 좌초비용 (천억원)</td>
+    </tr>
+    <tr>
+      <td><code style="word-break: break-all;">sub_scenario_1_배출량</code></td>
+      <td style="text-align:left;">계획기간 내 연도별 온실가스 배출량 (tCO₂eq)</td>
+    </tr>
+  </tbody>
+</table>
               
             </div>
           </div>
