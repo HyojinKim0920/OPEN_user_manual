@@ -1,13 +1,41 @@
-site_name: Optimal Pathway to Energy Transition for Net-zero energy system
+
+site_name: USER_MANUAL_1.0
+site_url: ""
 
 theme:
-  name: rtd-dropdown
-  extra_css:
-    - stylesheets/extra.css
+  name: material
+  language: ko
+  font:
+    text: False # 기본 폰트 비활성화
+    code: JetBrains Mono
+  features:
+    - navigation.tabs
+    - navigation.sections
+    - navigation.expand
+    - navigation.top
+    - content.code.copy
+    - search.highlight
+    - search.suggest
+
+extra_css:
+  - stylesheets/extra.css
+
+markdown_extensions:
+  - admonition
+  - pymdownx.superfences
+  - pymdownx.details
+  - pymdownx.inlinehilite
+  - pymdownx.highlight
+  # - indent_detent
+
+  - toc:
+      permalink: true
+  
 
 nav:
-  - Welcome OPEN! : 1_Welcome_OPEN.md
-  - OPEN Concept : 2_OPEN_concept.md
-  - Getting Started : 3_Get_Started.md
-  - User Guide : 4_user_guide.md
-  - User Tutorial : 5_User_Tutorial.md
+  - Home: index.md
+  - Welcome OPEN!: 1_Welcome_OPEN.md
+  - OPEN Concept: 2_OPEN_concept.md
+  - Getting Started: 3_Get_Started.md
+  - User Guide: 4_user_guide.md
+  - User Tutorial: 5_User_Tutorial.md

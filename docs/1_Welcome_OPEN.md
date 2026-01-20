@@ -1,6 +1,6 @@
-<p align="right">
+<!-- <p align="right">
   <img src="img/Logo.jpg" width="300">
-</p>
+</p> -->
 
 # Welcome to OPEN
 
@@ -22,13 +22,28 @@ OPEN은 Net-zero 달성을 위한 전환 부문 장기 설비 계획 플랫폼�
 
 ## Documentation Guide
 
-* 이번 section에서는 OPEN documentation에서 다루고 있는 주요 내용에 대해 안내한다.
-* [Welcome OPEN](1_Welcome_OPEN.md)은 OPEN에 대해 개략적인 소개, target user, 향후 사용자를 위한 인용 방법을 제시한다.
-* [OPEN Concept](2_OPEN_concept.md)에서는 OPEN에 대해 전반적으로 다룬다. OPEN이 제공하고 있는 주요 기능을 정리하고, 모형의 목적과 제약조건에 대해 설명하며 모델을 적용할 수 있는 범위를 정리한다. 또한 OPEN의 최적화 과정에 대해 다루며, 본 모델만의 특징을 소개한다. OPEN의 주요 개발 단계와 향후 업데이트 계획을 소개하고, 향후 제공될 기능에 대해 예고한다.
-* [Getting Started](3_Get_Started.md)은 OPEN을 설치하는 방법과 모델 실행을 위해 가상환경을 구축하는 방법에 대해 설명한다. 또한, OPEN에서 사용자의 상황에 맞게 사용할 수 있는 상업용, 비상업용 솔버를 추천하고, 모델과 연동하는 방법을 보여준다.
-* [User Guide](4_user_guide.md)에서는 모형을 사용하는 구체적인 방법을 다룬다. 먼저, 모델 실행에 있어 필요한 입력데이터들과 모델의 실행 결과물인 결과데이터들의 구조에 대해 설명한다. 또한, 모델에서 시나리오를 생성하는 방법과 제약조건을 추가하는 방법을 자세하게 설명한다.
-* [User Tutorial](5_User_tutorial.md)에서는 간단한 toy example을 제공하여 사용자가 OPEN을 친숙하게 사용할 수 있도록 돕는다.
+이번 section에서는 OPEN documentation에서 다루고 있는 주요 내용에 대해 안내한다.
+
+!!! info "Welcome OPEN"
+    [Welcome OPEN](1_Welcome_OPEN.md)은 OPEN에 대해 개략적인 소개, target user, 향후 사용자를 위한 인용 방법을 제시한다.
+
+!!! info "OPEN Concept"
+    [OPEN Concept](2_OPEN_concept.md)에서는 OPEN에 대해 전반적으로 다룬다.  
+    OPEN이 제공하는 주요 기능을 정리하고, 모형의 목적과 제약조건을 설명하며 적용 범위를 정리한다.  
+    또한 최적화 과정과 모델의 특징을 소개하고, 개발 단계 및 향후 업데이트 계획과 예정 기능을 예고한다.
+
+!!! info "Getting Started"
+    [Getting Started](3_Get_Started.md)은 OPEN 설치 방법과 모델 실행을 위한 가상환경 구축 방법을 설명한다.  
+    또한 상업용/비상업용 솔버를 추천하고, 모델과 연동하는 방법을 보여준다.
+
+!!! info "User Guide"
+    [User Guide](4_user_guide.md)에서는 모형을 사용하는 구체적인 방법을 다룬다.  
+    입력데이터 구조와 결과데이터 구조를 설명하고, 시나리오 생성 및 제약조건 추가 방법을 자세히 설명한다.
+
+!!! info "User Tutorial"
+    [User Tutorial](5_User_Tutorial.md)에서는 간단한 toy example을 제공하여 사용자가 OPEN을 친숙하게 사용할 수 있도록 돕는다.
+
 
 ## Citing
 
-OPEN의 사용자는 학술 논문이나 다른 연구에서 OPEN 모델을 인용하는 것을 권장한다. 이 모형을 인용할 때 사용할 추천 문구는 다음과 같다: Power Market and Grid in NEXT group. (2025). OPEN: Optimal Pathway to Energy transition for Net-zero energy system. https://github.com/nextgroup-or-kr/OPEN.git
+OPEN의 사용자는 학술 논문이나 다른 연구에서 OPEN 모델을 인용하는 것을 권장한다. 이 모형을 인용할 때 사용할 추천 문구는 다음과 같다: Power Market and Grid in NEXT group. (2026). OPEN: Optimal Pathway to Energy transition for Net-zero energy system. [https://github.com/nextgroup-or-kr/OPEN.git](https://github.com/nextgroup-or-kr/OPEN.git)

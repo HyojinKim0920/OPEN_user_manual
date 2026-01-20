@@ -1,28 +1,158 @@
-<p align="right">
-  <img src="img/Logo.jpg" width="300">
-</p>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-# Welcome to OPEN!
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet">
 
-### Optimal Pathway to Energy Transition for Net-zero energy system
 
-* OPEN은 Net-zero 달성을 위한 전환 부문 장기 설비 계획 플랫폼이다. OPEN은 전통적인 발전기, 변동성이 있는 재생에너지 자원, 저장장치, 송전계통 등을 통합적으로 고려하여 미래 계획연도의 전력수요를 최소 비용으로 충족할 수 있는 장기 설비 계획 및 단기 운영 계획을 수립하도록  설계되었다. 특히, 이 모형은 전력계통의 규모, 지역과 수요 데이터의 해상도, 제약조건 등을 사용자가 유연하게 수정할 수 있는 모델이다. OPEN은 Python 언어 기반으로 개발되었으며, Pyomo라이브러리를 활용해 최적화 모델 을 구성하고 상업용 혹은 비상업용 솔버로 최적화 문제가 풀이된다. 이 모델은 연구자들에게 학술 연구와 분석을, 정책 입안자와 결정자들에게 정책 평가 및 자원 계획을 할 수 있도록  높은 유연성과 확장성을 제공한다. OPEN은 사단법인 넥스트에 의해 개발 및 유지 관리되며, 모든 사용자가 자유롭게 사용할 수 있는 오픈소스 모델이다.
-  
+<!-- Hero Section -->
+<div style="display: flex; justify-content: space-between; align-items: center; margin-top: 2rem;">
+
+  <div style="max-width: 65%;">
+    <h1 style="margin-bottom: 0.2em;">OPEN</h1>
+    <p style="font-size: 1.5em; font-weight: 700; margin-top: 0;">
+      : Optimal Pathway to Energy Transition<br>
+          for Net-zero Energy System
+    </p>
+
+    <p style="margin-top: 1.2em; font-size: 1.05em; color: #555;">
+      OPEN은 장기 전원·송전·저장 계획과 단기 계통 운영을<br> 
+      통합적으로 분석하기 위한 전력계통 계획 및 운영 모델입니다.
+    </p>
+  </div>
+
+  <div>
+    <img src="img/Logo.jpg" width="260">
+  </div>
+
+</div>
+
+<hr style="margin: 2.5rem 0;">
+
+<!-- Intro Image -->
 <p align="center">
-<img src="img/1_구조.png" width="1000">
-</p>  
-  
-### Target Users
+  <img src="img/0_intro.png" style="max-width: 100%;">
+</p>
+<!-- <!-- Quick Links -->
+<div style="margin-top: 2.5rem;">
+  <h2 style="margin: 0 0 1rem 0;">Go to OPEN</h2>
 
-* OPEN은 다양한 수준의 사용자들을 고려하여 개발된  전환부문 장기 설비 계획 최적화 플랫폼으로, 전문 사용자부터 일반 사용자까지 모두 활용할 수 있도록 구성되어 있다. 복잡한 모델링보다는 완성된 분석 도구 를 필요로 하는 일반 사용자는 OPEN을 활용해 전원 계획과 운영 결과를 손쉽게 도출할 수 있다. OPEN은 기본적으로 중앙집중형 계획 관점에서 최소 비용으로 미래 전력수요를 충족시키는 장기 설비 계획 및 단기 운영 스케줄을 산출할 수 있는 완성된 분석 모듈을 탑재하고 있다. 사용자는 입력 데이터를 수정하는 방식으로 다양한 조건을 손쉽게 설정할 수 있다. 이를 통해 다중 시나리오 기반의 효율적인 설비 투자, 의사결정, 정책 분석, 경제성 평가 등 장기적인 비전 수립을 위한 결과를 도출할 수 있다.
-* 전력 시스템 계획 및 운영과 관련한 최적화 문제를 직접 정의하고자 하는 전문 사용자는 OPEN이 제공하는 다양한 기능을 활용하여 최적화 문제를 자체적으로 구성할 수 있다. OPEN은 제약조건과 변수들이 블록 단위로 구조화되어 있어, 사용자가 이를 직접 가져오거나 새롭게 추가하여 다양한 목적에 맞는 새로운 최적화 문제를 구성할 수 있도록 지원한다. 또한, 대규모 문제를 효율적으로 풀 수 있도록 사전에 구축된 최적화 알고리즘이 포함되어 있어, 복잡한 설정 없이도 빠르고 안정적인 계산을 제공한다. OPEN의 블록 기반 구조는 다양한 자원의 기술적∙경제적 가치 및 전력계통에 미치는 영향을 시나리오 기반으로 분석하는데 도움을 준다. 사용자는 필요에 따라 타 부문과 연계하거나 새로운 기능을 자유롭게 추가하여 모델을 확장할 수 있다.
+  <div style="
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1.2rem;
+  ">
 
-### Documentation Guide(to-do, 마지막 수정 필요)
-* 이 페이지에서는 OPEN documentation에서 다루고 있는 주요 내용에 대해 안내한다. 이 장에서는 Overview은 OPEN에 대해 개략적인 소개, target user, 향후 user를 위한 인용 방법을 제시한다.
-* [OPEN Concept and Approach](2_OPEN_concept.md)에서는 OPEN에 대해 전반적으로 다룬다. OPEN이 제공하고 있는 주요 기능을 정리하고, 모형의 목적과 제약조건에 대해 설명하며 모델을 적용할 수 있는 범위를 정리한다. 또한 OPEN의 최적화 과정에 대해 다루며, 본 모델만의 특징을 소개한다. OPEN의 주요 개발 과정과 앞으로의 개발 로드맵을 제시하여 추후 제공될 기능들에 대해 예고한다.
-* [Getting Started](3_Get_started.md) Getting Started은 OPEN을 설치하는 방법과 모델 실행을 위해 가상환경을 구축하는 방법에 대해 설명한다. 또한, OPEN에서 사용자의 상황에 맞게 사용할 수 있는 상업용, 비상업용 솔버를 추천하고, 모델과 연동하는 방법을 보여준다.
-* [User Guide](4_user_guide.md)에서는 모형을 사용하는 구체적인 방법을 다룬다. 먼저, 모델 실행에 있어 필요한 입력데이터들과 모델의 실행 결과물인 결과데이터들의 구조에 대해 설명한다. 또한, 모델에서 시나리오를 생성하는 방법과 제약조건을 추가하는 방법을 자세하게 설명한다.
-  
+    <!-- Card 1 -->
+    <div style="
+      border: 1px solid #e6e6e6;
+      border-radius: 10px;
+      padding: 1.1rem 1.2rem;
+      background: #fff;
+    ">
+      <div style="display:flex; align-items:center; gap:0.6rem; font-weight:700;">
+        <span style="font-size: 1.1rem;">📑</span>
+        <span>Overview</span>
+      </div>
+      <hr style="margin: 0.9rem 0; border: none; border-top: 1px solid #eee;">
 
-### Citing
-* OPEN의 사용자는 학술 논문이나 다른 연구에서 OPEN 모델을 인용하는 것을 권장한다. 이 모형을 인용할 때 사용할 추천 문구는 다음과 같다: Power Market and Grid in NEXT group. (2025). OPEN: Optimal Pathway to Energy Transition for Net-zero energy system. (https://github.com/nextgroup-or-kr/OPEN.git)
+      <p style="margin: 0 0 0.7rem 0; color:#555; line-height:1.4;">
+        OPEN의 개념과 기능에 대해 확인하세요.
+      </p>
+
+
+      <div style="display:flex; flex-direction:column; gap:0.5rem;">
+        <a href="1_Welcome_OPEN/#optimal-pathway-to-energy-transition-for-net-zero-energy-system" style="text-decoration:none; color:#d14;">
+          → Introduction
+        </a>
+        <a href="2_OPEN_concept/#what-is-open" style="text-decoration:none; color:#d14;">
+          → Concept
+        </a>
+      </div>
+    </div>
+
+    <!-- Card 2 -->
+    <div style="
+      border: 1px solid #e6e6e6;
+      border-radius: 10px;
+      padding: 1.1rem 1.2rem;
+      background: #fff;
+    ">
+      <div style="display:flex; align-items:center; gap:0.6rem; font-weight:700;">
+        <span style="font-size: 1.1rem;">🚀</span>
+        <span>Getting started</span>
+      </div>
+      <hr style="margin: 0.9rem 0; border: none; border-top: 1px solid #eee;">
+      <p style="margin: 0 0 0.7rem 0; color:#555; line-height:1.4;">
+        OPEN을 사용해보세요.
+      </p>
+
+
+      <div style="display:flex; flex-direction:column; gap:0.5rem;">
+        <a href="3_Get_Started/#download-open" style="text-decoration:none; color:#d14;">
+          → Installation
+        </a>
+        <a href="4_user_guide/#how-to-execute-open" style="text-decoration:none; color:#d14;">
+          → Quick Start
+        </a>
+      </div>
+    </div>
+    
+
+    <!-- Card 3 -->
+    <div style="
+      border: 1px solid #e6e6e6;
+      border-radius: 10px;
+      padding: 1.1rem 1.2rem;
+      background: #fff;
+    ">
+      <div style="display:flex; align-items:center; gap:0.6rem; font-weight:700;">
+        <span style="font-size: 1.1rem;">📝</span>
+        <span>Release Notes</span>
+      </div>
+      <hr style="margin: 0.9rem 0; border: none; border-top: 1px solid #eee;">
+
+      <p style="margin: 0 0 0.7rem 0; color:#555; line-height:1.4;">
+        최신 기능, 버그 수정, 개선 사항을 릴리즈 노트에서 확인하세요.
+      </p>
+
+      <a href="release_notes/" style="text-decoration:none; color:#d14;">
+        → What’s new
+      </a>
+    </div>
+
+    <!-- Card 4 -->
+    <div style="
+      border: 1px solid #e6e6e6;
+      border-radius: 10px;
+      padding: 1.1rem 1.2rem;
+      background: #fff;
+    ">
+      <div style="display:flex; align-items:center; gap:0.6rem; font-weight:700;">
+        <span style="font-size: 1.1rem;">⚖️</span>
+        <span>Open Source, MIT</span>
+      </div>
+      <hr style="margin: 0.9rem 0; border: none; border-top: 1px solid #eee;">
+
+      <p style="margin: 0 0 0.7rem 0; color:#555; line-height:1.4;">
+        OPEN은 사단법인 넥스트에서 개발하여 오픈소스로 제공되며 GitHub에서 확인할 수 있습니다.
+      </p>
+
+      <div style="display:flex; flex-direction:column; gap:0.5rem;">
+        <a href="https://github.com/nextgroup-or-kr/OPEN" style="text-decoration:none; color:#d14;">
+          → GitHub for OPEN
+        </a>
+        <a href="https://nextgroup.or.kr/ko/index" style="text-decoration:none; color:#d14;">
+          → NEXTgroup
+        </a>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Responsive: 모바일에서는 1열로 -->
+  <style>
+    @media (max-width: 900px) {
+      .quicklinks-grid { grid-template-columns: 1fr !important; }
+    }
+  </style>
+</div>

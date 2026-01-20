@@ -423,6 +423,7 @@ table.dataframe {
 * 계획기간에 대한 정보는 snapshots의 하위블록으로 시작일과 종료일에 대해 작성한다. 이 때 유의해아 할 점은 end_date에 종료일을 작성할 때 실제 종료일의 1일 뒤 시점으로 작성해야 한다.
   
   ```yaml
+
     snapshots:
         start: 2025-01-01
         end: 2025-01-02
@@ -431,6 +432,7 @@ table.dataframe {
 * 입력 데이터 경로에 대한 위치를 작성한다. 공통 입력데이터가 위치한 경로의 폴더명은 `csv_folder_name`에 작성한다. 시나리오 명에 대한 정보는 `scenario_name`에 작성한다. 시나리오 폴더의 경로는 `{input:scenarios}`에 resources 폴더부터 작성한다.
 
   ```yaml
+
     csv_folder_name: SystemData
     scenario_name : sub_scenario_1
     input:
@@ -440,6 +442,7 @@ table.dataframe {
 * 이 문제는 장기전원계획이 아닌 단기운영계획만 모의하기 때문에 `{planning:activate}`는 `False`로 작성해야 한다. 단기운영계획을 활성화하기 위해 `{operation:activate}`는 `True`로 작성해야 한다. `step_length`는 단기운영계획의 문제 풀이 단위를 의미하고 시간 단위로 작성해야하며, opt_window_length는 동시에 문제를 푸는 기간을 의미한다.
 
   ```yaml
+
     operation:
         activate: True
 
@@ -453,7 +456,8 @@ table.dataframe {
 
 * `test` 폴더에 모델 실행을 위한 파이썬 파일을 생성해야 하며, 본 예시에서는 `test\main_test.py`을 생성한다. 새롭게 생성한 파일에서 아래처럼 입력하여 시뮬레이션을 수행한다. 앞서 작성한 시나리오 정보파일과 단기 운영계획을 모의하는 모듈을 입력하고, 해당 파이썬 파일을 실행하여 시뮬레이션을 수행할 수 있다. 참고로 OPEN에서 단기 운영계확만 모의하는 모듈은 `run_operation `이므로 해당 모듈을 이용하면 된다.
 
-    ```python
+```python
+
     from open import Network
     from open._helpers import call_config
 
@@ -469,11 +473,11 @@ table.dataframe {
         n = Network()
         n = n.module.run_operation(config, **kwargs)
 
-    ```
+```
 
 ### [Results – sub_scenario_1]
 
-* 단기운영계획인 sub_scenario_1에 대한 축약적인 결과는 `\SystemData\results\sub_scenario_1\summary_short_term_sub_scena`rio_1_2025.xlsx`에서 제공한다. 구체적인 결과는 \test\SystemData\results\sub_scenario_1\ST_2025`에서 각 항목별 파일로 제공한다. 특히, 시간대별 발전기별 출력량은 해당 경로에서 generators.csv파일을 통해 확인할 수 있으며 아래 그림과 같다.
+* 단기운영계획인 sub_scenario_1에 대한 축약적인 결과는 `\SystemData\results\sub_scenario_1\summary_short_term_sub_scenario_1_2025.xlsx`에서 제공한다. 구체적인 결과는 `\test\SystemData\results\sub_scenario_1\ST_2025`에서 각 항목별 파일로 제공한다. 특히, 시간대별 발전기별 출력량은 해당 경로에서 `generators.csv`파일을 통해 확인할 수 있으며 아래 그림과 같다.
 
     ![sub_scenario_1_result_1](img/5_sub_scenario_1_results.png)
 

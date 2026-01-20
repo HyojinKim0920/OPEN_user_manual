@@ -15,18 +15,36 @@ git clone https://github.com/nextgroup-or-kr/OPEN.git
 
 ## Install Virtual Environment
 
-* 가상환경은 Python 프로젝트별로 독립적인 패키지 환경을 구성할 수 있는 도구로, 하나의 시스템에 여러 프로젝트가 존재할 때 서로 다른 버전의 패키지나 라이브러리의 충돌을 방지하고자 사용된다. OPEN은 `Python`의 다양한 패키지들을 사용하고 있는데, 앞서 설명한 충돌을 피하고자 가상환경을 구축하는 것을 권고한다. OPEN은 `envs`폴더에 가상환경 구축을 위한 환경 설정 파일인 `environment.yaml`을 제공하고 있다.
-* Python 패키지 설치 도구로 `pip`를 설치했다면, 아래의 명령어로 가상환경을 구축할 수 있다.
-  
-```
-pip env create -f environment.yaml
-```
+* 가상환경은 Python 프로젝트별로 독립적인 패키지 환경을 구성할 수 있는 도구로, 하나의 시스템에 여러 프로젝트가 존재할 때 서로 다른 버전의 패키지나 라이브러리의 충돌을 방지하고자 사용된다. OPEN은 `Python`의 다양한 패키지들을 사용하고 있는데, 앞서 설명한 충돌을 피하고자 가상환경을 구축하는 것을 권고한다. OPEN은 `envs`폴더에 가상환경 구축을 위한 환경 설정 파일인 `environment.yaml`을 제공하고 있다. anaconda를 설치하고, anaconda prompt창에서 가상환경 구축 방법을 설명하도록 한다.
 
-* Python 패키지 설치 도구로 `conda`를 설치했다면, 아래의 명령어로 가상환경을 구축할 수 있다.
+* (NEW) 신규 사용자는 아래의 순서에 따라 가상환경을 구축할 수 있다.
 
-```
-conda env create -f environment.yaml
-```
+    1. prompt에서 OPEN의 `environment.yaml` 파일이 위치한 경로까지 이동
+
+        ```bash
+        cd <path-to-environment.yaml>
+        ```
+
+    2. 경로 이동 후, 아래의 명령어로 가상환경을 구축할 수 있다.
+
+        ```bash
+        conda env create -f environment.yaml
+        ```
+
+* (Upgrade) 기존 사용자는 가상환경이 업데이트된 경우 아래의 순서에 따라 기존 가상환경을 업데이트할 수 있다.
+
+    1. prompt에서 OPEN의 `environment.yaml` 파일이 위치한 경로까지 이동
+
+        ```bash
+        cd <path-to-environment.yaml>
+        ```
+
+    2. 경로 이동 후, 아래의 명령어로 가상환경을 업데이트할 수 있다.
+
+        ```bash
+        conda env update -n OPEN -f environment.yaml
+        ```
+
 
 * 운영체계가 OS인 경우에는, apple silicon (macOS arm64)용 conda 채널에 `pyomo==6.0` 패키지가 제공되지 않아 가상환경 설치시 에러가 발생한다. 이를 해결하기 위해 environment.yaml에서 해당 패키지를 주석처리 후 가상환경 생성하고, 해당 가상환경에서 `pyomo`를 설치해야 한다.
 
@@ -34,4 +52,6 @@ conda env create -f environment.yaml
 
 * OPEN은 구축한 최적화 모델을 외부 솔버로 전달하여 문제 풀이를 수행한다. 이 모델은 상업용, 비상업용 solver에서 모두 사용할 수 있게 지원한다. 참고로 CPLEX는 academic license를 갖고 있다면 무료로 사용할 수 있다.
     - [CPLEX](https://www.ibm.com/products)
+    - [GUROBI](https://www.gurobi.com/)
     - [GLPK](https://www.gnu.org/software/glpk/)
+    - [HIGHS](https://highs.dev/)
