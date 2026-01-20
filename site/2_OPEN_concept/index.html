@@ -1,0 +1,822 @@
+
+<!doctype html>
+<html lang="ko" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../1_Welcome_OPEN/">
+      
+      
+        <link rel="next" href="../3_Get_Started/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.1">
+    
+    
+      
+        <title>OPEN Concept - USER_MANUAL_1.0</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.484c7ddc.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CJetBrains+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"JetBrains Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#open-concept" class="md-skip">
+          콘텐츠로 이동
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="상단/헤더">
+    <a href=".." title="USER_MANUAL_1.0" class="md-header__button md-logo" aria-label="USER_MANUAL_1.0" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            USER_MANUAL_1.0
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              OPEN Concept
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="검색" placeholder="검색" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="검색">
+        
+        <button type="reset" class="md-search__icon md-icon" title="지우기" aria-label="지우기" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            검색 초기화
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="탭" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href=".." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../1_Welcome_OPEN/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Welcome OPEN!
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    <li class="md-tabs__item md-tabs__item--active">
+      <a href="./" class="md-tabs__link">
+        
+  
+  
+    
+  
+  OPEN Concept
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../3_Get_Started/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Getting Started
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../4_user_guide/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  User Guide
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../5_User_Tutorial/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  User Tutorial
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="네비게이션" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="USER_MANUAL_1.0" class="md-nav__button md-logo" aria-label="USER_MANUAL_1.0" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    USER_MANUAL_1.0
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../1_Welcome_OPEN/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Welcome OPEN!
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    OPEN Concept
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    OPEN Concept
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="목차">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      목차
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#what-is-open" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What is OPEN
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-to-open-approach-the-problem" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How to OPEN Approach the Problem
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#development-upgrade-roadmap-of-open" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Development &amp; Upgrade Roadmap of OPEN
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../3_Get_Started/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Getting Started
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../4_user_guide/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    User Guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../5_User_Tutorial/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    User Tutorial
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="목차">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      목차
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#what-is-open" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What is OPEN
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-to-open-approach-the-problem" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How to OPEN Approach the Problem
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#development-upgrade-roadmap-of-open" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Development &amp; Upgrade Roadmap of OPEN
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="open-concept">OPEN Concept<a class="headerlink" href="#open-concept" title="Permanent link">&para;</a></h1>
+<h2 id="what-is-open">What is OPEN<a class="headerlink" href="#what-is-open" title="Permanent link">&para;</a></h2>
+<ul>
+<li>
+<p>OPEN은 전력 수요와 공급의 균형을 고려하여, 시스템 비용을 최소화하는 최적의 설비 투자 및 운영 계획을 수립하는 혼합정수계획(MILP, Mixed Integer Linear Program)기반의 모형이다. 본 모형은 장기적인 설비 계획(신규 건설 및 기존 설비 폐지 등)을 수립할 수 있고, 미리 결정된 설비를 기반으로 발전기 또는 저장장치의 운영 스케줄을 모의할 수 있다. OPEN은 모두 기동정지계획(UC, Unit Commitment)의 일반적인 구조를 따르며, 다음과 같은 주요 제약조건들을 반영한다. 추가로, 전원 계획 문제에서는 사용자 설정에 따라 최적의 연료전환 경로를 결정할 수 있고, 지역별 재생에너지 설치 잠재량을 반영할 수 있다.</p>
+<ul>
+<li>전력 수급 균형</li>
+<li>예비력 확보 조건</li>
+<li>발전기의 기술적 제약(최소 기동/정지 운전 시간, 증∙감발률 등)</li>
+<li>저장장치의 운영 제약</li>
+<li>송전선로 조류 한계용량</li>
+<li>온실가스 배출량 상한</li>
+</ul>
+</li>
+<li>
+<p>OPEN은 다음과 결과를 제공할 수 있다. </p>
+<ul>
+<li>용량 확장 계획(e.g., 발전기, 저장장치 등의 설비 폐지 또는 투자 결정)</li>
+<li>발전기의 연료전환 계획(e.g., 석탄 → 암모니아 혼소)</li>
+<li>조기폐지 결정시 폐지 보상 비용</li>
+<li>송전망 확장 결정 및 지역간 조류 계산</li>
+<li>발전기 및 저장장치의 운영 결과</li>
+<li>정책결정 옵션 설정(e.g., 온실가스 배출량 제한 등)</li>
+</ul>
+</li>
+<li>
+<p>OPEN은 각 설비의 유형, 비용, 가격 등 입력 데이터에 대해 사용자가 직관적으로 설정할 수 있도록 설계되어 있으며, 데이터 구조 또한 유연하게 구성되어 있어 다양한 조건과 시나리오를 손쉽게 반영할 수 있다. 본 모델은 Python 언어 기반으로 구현되어 있어 사용자 접근성이 높고, 필요에 따라 기능을 추가하거나 수정하는 것도 비교적 용이하다. 이러한 특징을 바탕으로, 사용자는 전력 부문뿐만 아니라 가스, 열, 전기차(EV) 등 다른 에너지 부문까지 확장하여 설비 계획 및 운영 시뮬레이션을 수행할 수 있다. 또한, OPEN은 주요 제약조건들이 모듈화되어 있어, 사용자의 분석 목적에 따라 제약조건을 선택적으로 활성화하거나 조정하는 것도 가능하다. 이렇듯, OPEN은 다양한 정책 분석, 시나리오 비교, 시스템 설계에 유연하게 활용될 수 있는 확장성과 실용성을 갖춘 플랫폼이다.</p>
+</li>
+</ul>
+<h2 id="how-to-open-approach-the-problem">How to OPEN Approach the Problem<a class="headerlink" href="#how-to-open-approach-the-problem" title="Permanent link">&para;</a></h2>
+<ul>
+<li>OPEN실행하기 전에 사용자는 먼저 지리적 및 시간적 해상도를 설정해야 한다. 해상도 설정 없이 전체 지역과 장기간의 수요 데이터를 모두 고려하게 되면, 문제의 크기가 과도하게 커져 적정 시간 내에 최적해를 도출하는데 어려움이 발생한다. 따라서 사용자는 송전계통을 적절히 축약하여, 하위 지역에 연결된 발전기, 전력수요, 송전선로 등을 대표모선으로 통합하는 축약계통을 구성하는 것을 권장한다. 시간 해상도의 경우에도 사용자는 전체 연간 수요 데이터를 그대로 사용하는 대신, 장기 설비 계획과 단기 운영 계획을 각각 대표하는 대표일(representative days)을 설정하여 수요 프로파일을 축약하는 것을 권장한다. 이러한 해상도 조정은 계산 효율성을 크게 향상시킬 수 있으며, OPEN이 보다 신속하고 안정적으로 최적해를 도출할 수 있도록 도와준다.</li>
+<li>OPEN의 설비계획 문제는 Two-stage Framework로 구성되며, 설비 투자∙폐지 결정과 운영 단계로 구분된다. 첫 번째 단계에서는 계획기간 동안의 건설, 운영, 연료 비용의 총 합을 최소화하여 설비계획을 도출한다. 두 번째 단계에서 이전 설비계획 단계에서 결정된 설비를 고정시키고, 고도화된 해상도를 기반으로 설비들의 운영 스케줄을 모의한다. 해당 단계에서는 운영기간을 여러 작은 문제로 분해하여 풀이하고, 두 번째 문제에서 도출된 특정 지표가 첫 번째 단계의 제약을 만족할 때까지 반복적으로 문제를 풀이한다.<ul>
+<li>첫 번째 단계에서는 사용자가 설정한 대표일을 기반으로 문제를 풀이한다. 이때 고려되는 비용은 건설비용, 운영비용, 연료비용의 총합이며, OPEN은 이를 최소화하는 방향으로 최적의 설비 구성을 도출한다. 국가 단위 수준의 문제를 풀이할 경우에는 선형화된 문제로 설정하는 것을 권장하지만, 사용자 설정에 따라 설비의 건설/운영/폐지와 연료전환 여부 등이 이진 또는 정수 변수로 결정될 수 있다.  </li>
+<li>두 번째 단계에서는 첫 번째 단계에서 결정된 설비 계획을 기반으로 계획기간 동안의 운영 스케줄을 모의한다. 앞서 결정된 설비 계획을 기반으로 설비가 고정되므로, 운영비용과 연료비용의 총 합에 대해서만 최소화하는 운영계획을 결정한다. 이 때, 문제는 혼합정수선형계획(MILP) 문제로 설정되며, 각 설비의 기동정지, 최소운전시간, 출력증감발율 등 기술적 제약조건을 상세히 반영하여 현실적인 설비 운영방식을 모의한다.</li>
+<li>OPEN에서 제공하는 분석 모듈은 단일 실행으로 결과를 도출하지 않고, 1단계와 2단계를 반복적으로 수행하여 결과의 현실성을 높인다. 구체적으로, 두 번째 단계의 운영 모의가 종료되면 단기 운영으로 인한 불확실성을 LNG 발전량으로 검토한다. 즉, 설비계획에서 복합발전의 최소 발전량을 운영 모의로부터 도출된 발전량으로 제약한다. 운영 모의 단계의 결과가 모든 정책적 제약과 불확실성 제약을 만족시킬 때까지 두 단계를 반복 수행한다. 이는 운영의 불확실성이나 정책 제약을 설비계획에 피드백 형태로 반영하여, 계획과 운영 간의 정합성을 확보하기 위함이다. 즉, 이와 같은 반복 과정을 통해 유연성 문제와 정책적 제약이 설비계획에 반영될 수 있도록 개발되었다.</li>
+</ul>
+</li>
+</ul>
+<p align="center">
+  <img src="../img/2_structure.png" style="width: 70%;">
+</p>
+
+<p>위 그림은 OPEN이 설비계획과 운영계획을 어떻게 단계적으로 결합하여 문제를 해결하는지를 개념적으로 나타낸 것이다.
+전체 알고리즘은 크게 <strong>장기 설비계획 단계(1단계)</strong> 와 <strong>단기 운영계획 단계(2단계)</strong> 로 구성되며,
+두 단계는 단일 실행으로 종료되지 않고 반복적으로 수행된다.</p>
+<p>특히, 2단계 운영 모의에서 도출된 운영 제약 및 불확실성 정보가
+1단계 설비계획의 제약조건으로 다시 반영된다는 점이 OPEN의 핵심적인 특징이다.
+이러한 반복 구조를 통해, 단순한 비용 최소화 설비계획이 아니라
+현실적인 운영 가능성을 고려한 설비계획을 도출할 수 있다.</p>
+<div class="admonition tip">
+<p class="admonition-title">OPEN의 차별점</p>
+<p>많은 전력계획 모델은 설비계획과 운영계획을 독립적으로 수행한다.
+반면 OPEN은 단기 운영에서 발생하는 불확실성과 제약을 설비계획 단계로 반복적으로 피드백함으로써, 계획과 운영 간의 괴리를 최소화하도록 설계되었다.</p>
+</div>
+<table>
+  <thead>
+    <tr>
+      <th>구분</th>
+      <th>장기 전원계획</th>
+      <th>단기 운영계획</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>목적</td>
+      <td>설비 투자, 폐지, 연료전환 결정</td>
+      <td>운영계획 결정</td>
+    </tr>
+    <tr>
+      <td>대표일 선정</td>
+      <td>적용</td>
+      <td>미적용</td>
+    </tr>
+    <tr>
+      <td>시간 해상도</td>
+      <td>-</td>
+      <td>1시간 단위</td>
+    </tr>
+    <tr>
+      <td>기술적·경제적 특성</td>
+      <td>보통/낮음</td>
+      <td>높음</td>
+    </tr>
+    <tr>
+      <td>문제 유형</td>
+      <td>선형 계획법 (LP)</td>
+      <td>혼합 정수 선형 계획법 (MILP)</td>
+    </tr>
+    <tr>
+      <td>공통 제약조건</td>
+      <td colspan="2" >
+        • 수요 공급 일치 제약<br>
+        • 예비력 제약<br>
+        • 송전 네트워크의 DC power flow 제약<br>
+        • 온실가스 배출량 상한 제약
+      </td>
+    </tr>
+    <tr>
+      <td>개별 제약조건</td>
+      <td>
+        • 신규 건설·운영·폐지와 관련된 설비 변수의 선정 제약<br>
+        • 선행화 된 설비 운영 제약<br>
+        • 연료전환 제약<br>
+        • 재생에너지 설치 잠재량 제약
+      </td>
+      <td>
+        • 설비 운영 변수의 정수형 제약
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="development-upgrade-roadmap-of-open">Development &amp; Upgrade Roadmap of OPEN<a class="headerlink" href="#development-upgrade-roadmap-of-open" title="Permanent link">&para;</a></h2>
+<ul>
+<li>현재 OPEN은 발전기, 송전선로, 저장장치 등이 연계된 시스템에 한하여 설비  계획과 운영 모의에 대한 분석 모듈을 제공하고 있다. 사단법인 넥스트는 한국의  학계 연구팀들과 함께 현재 분석 범위를 넘어서 수소, 가스, 전기차 등 다양한 컴포넌트들이 동시에 반영될 수 있도록 OPEN을 확장해 나갈 계획이다.</li>
+<li>다양한 상업용, 비상업용 모델들도 최적화 문제의 크기가 커짐에 따라 최적해를 결정하는데 어려움이 있어 공간적∙시간적 해상도를 축소하는 방식으로 문제 풀이에 접근한다. 사단법인 넥스트는 전력 시스템 최적화에 우수한 전문성을 가진 학계 연구팀과 협업하여 최적화 기법 중 하나인 Benders Decomposition 방법론을 OPEN에 적용해 최적화 측면에서 계산 성능을 향상시키는 것에 노력하고 있다.</li>
+</ul>
+<p align="center">
+  <img src="../img/2_roadmap.png" style="width: 70%;">
+</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  맨위로
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.tabs", "navigation.sections", "navigation.expand", "navigation.top", "content.code.copy", "search.highlight", "search.suggest"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "\ud074\ub9bd\ubcf4\ub4dc\uc5d0 \ubcf5\uc0ac\ub428", "clipboard.copy": "\ud074\ub9bd\ubcf4\ub4dc\ub85c \ubcf5\uc0ac", "search.result.more.one": "\uc774 \ubb38\uc11c\uc5d0\uc11c 1\uac1c\uc758 \uac80\uc0c9 \uacb0\uacfc \ub354 \ubcf4\uae30", "search.result.more.other": "\uc774 \ubb38\uc11c\uc5d0\uc11c #\uac1c\uc758 \uac80\uc0c9 \uacb0\uacfc \ub354 \ubcf4\uae30", "search.result.none": "\uac80\uc0c9\uc5b4\uc640 \uc77c\uce58\ud558\ub294 \ubb38\uc11c\uac00 \uc5c6\uc2b5\ub2c8\ub2e4", "search.result.one": "1\uac1c\uc758 \uc77c\uce58\ud558\ub294 \ubb38\uc11c", "search.result.other": "#\uac1c\uc758 \uc77c\uce58\ud558\ub294 \ubb38\uc11c", "search.result.placeholder": "\uac80\uc0c9\uc5b4\ub97c \uc785\ub825\ud558\uc138\uc694", "search.result.term.missing": "\ud3ec\ud568\ub418\uc9c0 \uc54a\uc740 \uac80\uc0c9\uc5b4", "select.version": "\ubc84\uc804 \uc120\ud0dd"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>
