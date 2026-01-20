@@ -115,7 +115,7 @@
         최신 기능, 버그 수정, 개선 사항을 릴리즈 노트에서 확인하세요.
       </p>
 
-      <a href="release_notes/" style="text-decoration:none; color:#d14;">
+      <a href="6_release_notes" style="text-decoration:none; color:#d14;">
         → What’s new
       </a>
     </div>
